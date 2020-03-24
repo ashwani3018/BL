@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/last_update_date"
+        android:paddingLeft="10dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/sensexFullTextColor"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@color/forex_background_color"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@color/forex_background_color"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/exchange_rates"
+            android:textColor="@color/forex_header_text_color"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/categories_nse_bse_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/forex_background_color"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:padding="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/currency_inr"
+                    android:textSize="13sp" />
+
+                <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/tt_selling"
+                    android:textSize="13sp" />
+
+                <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/tt_buying"
+                    android:textSize="13sp" />
+
+                <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/bill_selling"
+                    android:textSize="13sp" />
+
+                <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/bill_buying"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/forex_row_background_second" />
+
+            <com.mobstac.thehindubusinessline.view.ProgressView
+                android:id="@+id/progress_container"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" />
+
+            <ListView
+                android:id="@+id/forex_list"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:visibility="gone"></ListView>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+

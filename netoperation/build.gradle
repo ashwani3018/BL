@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion "$COMPILE_SDK_VERSION".toInteger()
+    defaultConfig {
+        minSdkVersion "$MINIMUM_SDK_VERSION".toInteger()
+        targetSdkVersion "$TARGETED_SDK_VERSION".toInteger()
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled MINIFY_ENABLED
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation deps.rxjava2
+    implementation deps.rxAndroid2
+    implementation deps.rxRetrofitAdapter
+    implementation deps.gson
+    implementation deps.retrofit
+    implementation deps.retrofitGsonConverter
+    implementation deps.jodaTime
+
+    // Room components
+    implementation deps.room
+    annotationProcessor deps.room_annotationProcessor
+    implementation deps.room_compiler
+    implementation deps.room_rxjava2
+
+    // Lifecycle components
+    implementation deps.archLifecycle
+    annotationProcessor deps.archLifecycle_annotationProcessor
+
+
+}

@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+//apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+//    buildToolsVersion "29.0.2"
+    compileSdkVersion "$COMPILE_SDK_VERSION".toInteger()
+    defaultConfig {
+        minSdkVersion "$MINIMUM_SDK_VERSION".toInteger()
+        targetSdkVersion "$TARGETED_SDK_VERSION".toInteger()
+        applicationId "com.mobstac.thehindubusinessline"
+        versionCode 43
+        versionName "TEST_43.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.6@aar') {
+        transitive = true
+    }
+
+    implementation "com.android.support:support-v4:$SUPPORT_VERSION"
+    implementation "com.android.support:customtabs:$SUPPORT_VERSION"
+
+    implementation project(path: ':lotame')
+
+    // RXJAVA
+    implementation deps.rxjava2
+    //It will take from THPSub module
+    //implementation deps.rxAndroid2
+    implementation deps.rxRetrofitAdapter
+    implementation deps.gson
+    implementation deps.retrofit
+    implementation deps.retrofitGsonConverter
+
+    // Google Play Services Library
+    implementation deps.PS_Ads
+    implementation deps.PS_Analytics
+
+    // FIREBASE
+    implementation deps.FIREBASE_CORE
+    implementation deps.FIREBASE_CRASH
+    implementation deps.FIREBASE_PREF
+    implementation deps.FIREBASE_MESSAGING
+    implementation deps.FIREBASE_DYNAMIC_LINK
+
+    // Multidex
+    //It will take from THPSub module
+    //implementation deps.multiDex
+
+    /*Realm Dependency*/
+    implementation 'io.realm:android-adapters:1.3.0'
+
+    /*Picasso Dependency*/
+    implementation deps.picasso
+
+    //Event bus
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+
+    /* https://github.com/LeonardoCardoso/Android-Link-Preview*/
+    implementation 'org.jsoup:jsoup:1.8.3'
+
+    // Link Preview, to get url metadata info
+    implementation 'com.leocardz:link-preview:1.2.2@aar'
+
+
+    // Comscore SDK
+    implementation 'com.comscore:android-analytics:5.+'
+
+    // Facebook Ads
+    implementation 'com.facebook.android:audience-network-sdk:5.1.0'
+    implementation 'com.google.ads.mediation:facebook:5.1.0.0'
+
+    //InMobi Ads
+    implementation 'com.inmobi.monetization:inmobi-ads:7.0.4'
+    implementation files('libs/commons-lang3-3.0.1.jar')
+    implementation files('libs/FlurryAnalytics-6.2.0.jar')
+    implementation files('libs/libadapterinmobi.jar')
+
+    //GDPR
+    implementation deps.GDPR
+
+    // Exo Player
+//    implementation deps.EXO_UI
+//    implementation deps.EXO_CORE
+
+    implementation deps.CONSTRAINT_LAYOUT
+    implementation deps.supportAnnotations
+    // It is being used for tabOrdering
+    // implementation project(':dragflowlayout')
+
+    // Taboola
+    implementation deps.TABOOLA
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation 'com.android.support:support-v4:28.0.0'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+    //Prebid Mobile SDK
+    implementation 'org.prebid:prebid-mobile-sdk:[1,2)'
+    // Subcription Module
+    implementation deps.thpSub
+    // RX Permission
+    implementation deps.rxPermission
+
+    //MoEngage
+    implementation 'com.moengage:moe-android-sdk:9.7.00'
+    implementation "com.moengage:moe-push-gcm:$MOENGAGE_PUSH_GCM"
+    implementation "com.moengage:addon-messaging:$MOENGAGE_ADDON_VERSION"
+
+    //JWPlayer
+    implementation 'com.longtailvideo.jwplayer:jwplayer-core:2.6.3+14'
+    implementation 'com.longtailvideo.jwplayer:jwplayer-common:2.6.3+14'
+}

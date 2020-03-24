@@ -1,0 +1,2 @@
+include ':app', ':netoperation', ':pinentryedittext', ':reactivenetwork', ':photoview', ':BLSub', ':smoothprogressbar', ':lotame'
+rootProject.name='Android BL'

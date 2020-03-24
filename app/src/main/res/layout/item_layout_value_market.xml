@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:id="@+id/topVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:textColor="@color/sensexTextColor"
+            android:textSize="@dimen/sensexTextSize"
+            android:visibility="gone" />
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:id="@+id/bottomVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="2dp"
+            android:gravity="right"
+            android:textColor="@color/sensexTextColor"
+            android:textSize="@dimen/sensexTextSize"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/statusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:src="@drawable/refresh_blue"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

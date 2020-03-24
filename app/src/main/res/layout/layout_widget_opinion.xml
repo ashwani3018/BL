@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:id="@+id/layout_root_opinion"
+        android:layout_width="@dimen/widget_recyclerView_opinion_width"
+        android:layout_height="@dimen/widget_recyclerView_opinion_height"
+        android:background="@color/widget_opinion_background"
+        android:orientation="vertical"
+        android:padding="@dimen/widget_recyclerView_opinion_padding">
+
+        <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+            android:id="@+id/textview_opinion_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@android:color/white"
+            android:textSize="9sp" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textview_opinion_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="@dimen/text_line_spacing"
+            android:maxLines="3"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/widget_opinion_title_size" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

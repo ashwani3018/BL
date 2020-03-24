@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_custom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="15dp">
+
+    <LinearLayout
+        android:id="@+id/layout_readlater"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.8"
+            android:gravity="center_vertical"
+            android:text="Read Later"
+            android:textColor="#808080" />
+
+        <TextView
+            android:id="@+id/textview_menu_readlater_count"
+            android:layout_width="30dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center"
+            android:background="@drawable/layout_border"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#ffffffff"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.8"
+            android:gravity="center_vertical"
+            android:text="Notifications"
+            android:textColor="#808080" />
+
+        <TextView
+            android:id="@+id/textview_menu_notifications_count"
+            android:layout_width="30dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center"
+            android:background="@drawable/layout_border"
+            android:gravity="center"
+            android:text="99+"
+            android:textColor="#ffffffff"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_menu_customize_home_screen"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="@string/customize_news_feed_menu"
+        android:textColor="#808080" />
+
+    <TextView
+        android:id="@+id/textView_menu_settings"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="@string/setting_menu"
+        android:textColor="#808080" />
+
+    <TextView
+        android:id="@+id/textView_menu_share_app"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_vertical"
+        android:text="@string/share_app_menu"
+        android:textColor="#808080" />
+
+
+</LinearLayout>

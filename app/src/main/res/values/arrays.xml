@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sizes">
+        <item name="0">Small</item>
+        <item name="1">Medium</item>
+        <item name="2">Large</item>
+        <item name="3">Extra Large</item>
+    </string-array>
+    <string-array name="sizevalues">
+        <item name="0">0</item>
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+    </string-array>
+    <string-array name="bse_spinner_array">
+        <item>Top Gainers - BSE 500</item>
+        <item>Top Losers - BSE 500</item>
+        <item>Indices</item>
+    </string-array>
+    <string-array name="nse_spinner_array">
+        <item>Top Gainers - CNX 500</item>
+        <item>Top Losers - CNX 500</item>
+        <item>Indices</item>
+    </string-array>
+
+</resources>

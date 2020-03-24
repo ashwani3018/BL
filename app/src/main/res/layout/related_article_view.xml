@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="13dp"
+            android:layout_gravity="center"
+            android:background="#ff5a00" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/related_article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/article_item_parent_left_right_padding"
+            android:text="@string/related_article"
+            android:textColor="@color/color_banner_text"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/related_article_parentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.mobstac.thehindubusinessline.view.ExpandedHeightGridView
+            android:id="@+id/related_article"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="1"
+            android:scrollbars="none"
+            android:visibility="gone" />
+    </android.support.v7.widget.CardView>
+</LinearLayout>

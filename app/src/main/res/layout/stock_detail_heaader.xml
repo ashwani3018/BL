@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forex_background_color"
+        android:orientation="vertical">
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:id="@+id/mainTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableEnd="@drawable/dropdown"
+            android:drawableRight="@drawable/dropdown"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="Top Gainers"
+            android:textColor="@color/forex_header_text_color"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/forex_row_background_second" />
+
+        <LinearLayout
+            android:id="@+id/optionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/top_gainer_looser_background"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+                android:id="@+id/topGainer"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="26dp"
+                android:paddingRight="12dp"
+                android:text="Top Gainers"
+                android:textColor="@color/forex_header_text_color"
+                android:textSize="18sp" />
+
+            <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+                android:id="@+id/topLoser"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="26dp"
+                android:paddingRight="12dp"
+                android:text="Top Losers"
+                android:textColor="@color/forex_header_text_color"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/categories_nse_bse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forex_background_color"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp">
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:text="@string/stock_name"
+            android:textColor="@color/forex_header_text_color"
+            android:textSize="14sp" />
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingLeft="12dp"
+            android:text="@string/stock_price"
+            android:textColor="@color/forex_header_text_color"
+            android:textSize="14sp" />
+
+        <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/stock_change"
+            android:textColor="@color/forex_header_text_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/forex_row_background_second" />
+</LinearLayout>

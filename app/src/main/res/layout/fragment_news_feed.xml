@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_home_widget_background"
+    android:gravity="center">
+
+    <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+        android:id="@+id/selectTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_home_widget_background"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/intital_setup_customize_info"
+        android:textAllCaps="false"
+        android:textColor="@color/customise_text_color"
+        android:textSize="16sp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/selectTopic"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="none">
+
+        <com.mobstac.thehindubusinessline.view.TagFlowLayout
+            android:id="@+id/id_flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:gravity="left"
+            app:max_select="-1"
+            app:paddingEnd="10dp"
+            app:paddingStart="10dp" />
+    </ScrollView>
+</RelativeLayout>

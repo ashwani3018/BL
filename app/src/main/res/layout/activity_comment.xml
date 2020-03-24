@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+                
+
+        <include layout="@layout/toolbar" />
+                
+
+        <FrameLayout
+            android:id="@+id/FRAME_CONTENT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/abc_action_bar_default_height_material" />
+
+        <View
+            style="@style/dividerStyle"
+            android:layout_marginTop="@dimen/abc_action_bar_default_height_material" />
+
+        <FrameLayout
+            android:id="@+id/layout_add_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/page_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/page_background"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/homeBottomLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/bottom_ads_top_strip_color"
+                    android:visibility="gone" />
+
+                <com.vmax.android.ads.api.VmaxAdView
+                    android:id="@+id/homeBottomAdHolder"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/page_background"
+                    android:gravity="center"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+            
+    </FrameLayout>
+
+
+</LinearLayout>

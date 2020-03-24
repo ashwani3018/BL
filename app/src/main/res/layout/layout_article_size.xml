@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginStart="25dp"
+    android:orientation="horizontal">
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/textview_article_small"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:text="@string/info_article_s"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/text_warm_grey" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/textview_article_medium"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:gravity="end"
+        android:text="@string/info_article_m"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/text_warm_grey" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/textview_article_large"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:gravity="end"
+        android:text="@string/info_article_l"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/text_warm_grey" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/textview_article_xlarge"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:gravity="end"
+        android:text="@string/info_article_xl"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/text_warm_grey" />
+</LinearLayout>

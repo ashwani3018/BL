@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/post_comment_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/blue_btn"
+        android:padding="8dp"
+        android:text="@string/post_comment"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/comment_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:textColor="@color/color_comment_from"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+    <!-- <View
+         android:id="@+id/bottomDivider"
+         style="?rulerDark"
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp" />-->
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mobstac.thehindubusinessline.fragments.HomeFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/bottomPaddingInListicle"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp" />
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+
+

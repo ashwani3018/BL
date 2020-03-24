@@ -1,0 +1,465 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Business Line</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="info_outbrain">Sponsered Content</string>
+    <string name="info_home_explore">Explore Section</string>
+    <string name="info_widget_viewall">SEE MORE FROM</string>
+    <string name="info_widget_opinion_title">Opinion</string>
+    <string name="info_widget_opinion_Content">Opinion Content</string>
+    <string name="info_widget_multimedia_title">Multimedia</string>
+
+    <!--Menu Strings-->
+    <string name="customize_news_feed_menu">Personalise Home Screen</string>
+    <string name="custom_notification_menu">Manage Notifications</string>
+    <string name="setting_menu">Settings</string>
+    <string name="clear_all_menu">Clear All</string>
+    <string name="share_app_menu">Share this app</string>
+    <string name="news_digest_menu">News Digest</string>
+    <!--menu End-->
+
+    <!-- static sections-->
+    <string name="info_help">Help</string>
+    <string name="info_aboutus">About Us</string>
+    <string name="info_termsconditions">Terms &amp; Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <string name="select_topic">Select topics to personalize your  home screen</string>
+    <string name="select_interset">Choose your Interests</string>
+    <string name="intital_setup_customize">Personalise app</string>
+    <string name="intital_setup_localize">Localise app</string>
+    <string name="intital_setup_customize_info">We will show more news from topics you choose in the Home Screen</string>
+    <string name="intital_setup_localize_info">Select the regional news you would like to read in the Home Screen</string>
+
+    <!--Article Details-->
+    <string name="update_text">Updated: </string>
+    <string name="by_text">By: </string>
+    <string name="recomended_by">Recommended By</string>
+    <string name="more_from_hindu">More From Businessline</string>
+    <string name="outbrain_recomendation_title">Sponsored Stories</string>
+    <string name="post_comment">Post a comment</string>
+    <string name="postcomment">Post Comment</string>
+    <string name="related_article">Related Articles</string>
+
+    <!--article Details ends-->
+
+    <string name="ok">Ok</string>
+    <string name="permision_available_location">Location Permission has been granted.</string>
+    <string name="permissions_not_granted">Permissions were not granted.</string>
+    <string name="permission_location_rationale">Location permission is needed to show the location preview.</string>
+
+    <string name="hint_name">Name</string>
+    <string name="hint_search_bookmark">Search </string>
+    <string name="hint_email">Email</string>
+    <string name="hint_comment_message">Comment Message</string>
+
+    <string name="how_to_menu">How to/Help</string>
+    <string name="t_c_menu">T&amp;C</string>
+    <string name="terms_heading"><h2>TERMS &amp; CONDITIONS [T&amp;C] &amp; RULES &amp; REGULATIONS [R&amp;R]</h2></string>
+    <string name="terms_conditions">Kasturi &amp; Sons Ltd [KSL or \'We\'] is the sole and absolute owner of &amp; maintains http://www.thehindubusinessline.com, http://m.thehindubusinessline.com and other mobile applications (Apps) (hereinafter "website") to enhance public access to the The Hindu Business Line newspaper owned by KSL. This service is provided on an "As Is" basis &amp; is continually under development.
+
+&lt;p&gt;KSL requires that all users/visitors to this site(s) on the World Wide Web (the "Site") adhere to these Terms &amp; Conditions [T&amp;C] &amp; Rules &amp; Regulations [R&amp;R].&lt;/p&gt;
+
+&lt;p&gt;By accessing this Site you/user/visitor automatically confirm your acknowledgment &amp; acceptance of these T&amp;C &amp; R&amp;R which is the agreement between the parties.&lt;/p&gt;
+
+Copyright/Trademarks [Collectively "Intellectual Property Rights"]\n
+
+&lt;p&gt;The trademarks, logos &amp; service marks ("Marks") displayed on the Site are the property of KSL &amp; other parties. Users are prohibited from using any Marks for any purpose including, but not limited to use as metatags on other pages or sites on the World Wide Web without the written permission of KSL or such third party which may own the Marks. All information &amp; content including any software programs available on or through the Site ("Content") is protected by copyright. Users are prohibited from modifying, copying, distributing, transmitting, displaying, publishing, selling, licensing, creating derivative works or using any Content available on or through the Site for commercial or public purposes.&lt;/p&gt;
+
+&lt;p&gt;KSl grants you a limited licence to access and make personal use of this site but not for commercial purposes. We permit the use of materials on this website subject to due credit is given to KSL. The use shall also be subject to non-commercial use and limited to personal or academic dissemination. (including on social media and use on all kinds of media). Copyright should be acknowledged. Such use should not infringe on the Intellectual Property Rights of any person. When using material on this website, proper attribution to authors and/or copyright holders must be given. User is granted a limited, revocable and non exclusive right to create hyperlinks to the home page or any other page of KSL/The Hindu Business Line so long as any of these links do not portray KSL, The Hindu Business Line or their podcast or products or services in a false, misleading, derogatory or offensive manner. You may not use KSL\'s logos or proprietary graphics or trademarks as part of the link without express permission.&lt;/p&gt;
+
+&lt;u&gt;No Warranties&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;ALL CONTENT ON THE SITE IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND EITHER EXPRESS OR IMPLIED INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY &amp; FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, SECURITY OR ACCURACY. KSL DOES NOT ENDORSE &amp; IS NOT RESPONSIBLE FOR THE ACCURACY OR RELIABILITY OF ANY OPINION, ADVICE OR STATEMENT MADE THROUGH THE SITE BY ANY PARTY OTHER THAN KSL. OTHER THAN AS REQUIRED UNDER APPLICABLE LAW,&lt;/p&gt;
+
+&lt;p&gt;UNDER NO CIRCUMSTANCE WILL KSL BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY A USER\'S RELIANCE ON INFORMATION OBTAINED THROUGH THE SITE. IT IS THE RESPONSIBILITY OF THE USER TO EVALUATE THE ACCURACY, COMPLETENESS OR USEFULNESS OF ANY OPINION, ADVICE OR OTHER CONTENT AVAILABLE ON/THROUGH THE SITE. PLEASE SEEK THE ADVICE OF PROFESSIONALS, AS APPROPRIATE, REGARDING THE EVALUATION OF ANY SPECIFIC OPINION, ADVICE OR OTHER CONTENT.&lt;/p&gt;
+
+&lt;u&gt;Limitation Of Liability&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;KSL specifically disclaims any liability (whether based in contract, tort, strict liability or otherwise) for any direct, indirect, incidental, consequential, or special damages arising out of or in any way connected with access to or use of the Site, (even if KSL has been advised of the possibility of such damages) including liability associated with any viruses which may infect a user\'s computer equipment.&lt;/p&gt;
+
+&lt;u&gt;Privacy&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;Users are invited to submit comments, questions, ideas, reviews or any other information concerning The Hindu Business Line and the website\'s contents, provided they understand that such comments will be subject to moderation &amp; The Hindu Business Line reserves the right to remove or edit such content. All such submissions should not be illegal, obscene, threatening, defamatory or infringing on privacy or on intellectual property rights of others.&lt;/p&gt;
+
+&lt;u&gt;Confidentiality Of User Communications&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;Except as required by law KSL will maintain the confidentiality of all user communications which contain personal user information &amp; which are transmitted directly to KSL. Postings by a user on any message board or in any chat room will not be protected as confidential &amp; KSL may use &amp; provide information contained in any such postings (including any ideas, concepts, know-how or other intellectual property) to KSL for any purpose whatsoever &amp; as deemed appropriate by KSL.&lt;/p&gt;
+
+&lt;u&gt;Linked Internet Sites&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;KSL prohibits caching, unauthorized hypertext links to the Site &amp; the framing of any Content available through the Site. KSL reserves the right to disable any unauthorized links or frames &amp; specifically disclaims any responsibility for the Content available on any other Internet sites linked to the Site. Access to any other Internet sites linked to the Site is at the user\'s own risk.&lt;/p&gt;
+
+&lt;u&gt;Postings&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;KSL is under no obligation to review any messages, information or content ("Postings") posted on the Site by users &amp; assumes no responsibility or liability relating to any such Postings. Notwithstanding the above, KSL may from time to time monitor the Postings on the Site &amp; may decline to accept and/or remove any Postings that contain&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1. Any unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, profane, hateful, racially, ethnically or otherwise objectionable material of any kind, including, but not limited to, any material which encourages conduct that would constitute a criminal offense, give rise to civil liability or otherwise violate any applicable local, state, national or international law.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;2. Advertisements or solicitations of any kind.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;3. Messages posted by users impersonating others.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;4. Personal information such as messages which state phone numbers, social security numbers, account numbers, addresses, or employer references.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;5. Messages by non-spokesperson employees of KSL purporting to speak on behalf of KSL..&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;6. Messages that offer unauthorized downloads of any copyrighted or private information.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;7. Multiple messages placed within individual folders by the same user restating the same point.&lt;/li&gt;
+&lt;br&gt;&lt;li&gt;8. Chain letters /mails of any kind.&lt;/li&gt;
+&lt;br&gt;&lt;/ul&gt;
+&lt;br&gt;&lt;u&gt;Changes To R &amp; R&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;We reserve the right to revise these R &amp; R at any time &amp; Users are deemed to be apprised of &amp; bound by any changes to these R &amp; R. The latest updated R &amp; R would be posted on the Site.&lt;/p&gt;
+
+&lt;u&gt;Violation Of Rules &amp; Regulations&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;KSL reserves the right to seek all remedies available at law &amp; in equity for violations of these T&amp;C &amp; R&amp;R, including the right to block access from a particular Internet address to the Site.&lt;/p&gt;
+
+&lt;u&gt;Access To Password Protected/Secure Areas&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;Access to &amp; use of password protected and/or secure areas of the Site is restricted to authorized users only. Unauthorized individuals attempting to access these areas of the Site may be subject to prosecution.&lt;/p&gt;
+
+&lt;u&gt;Arbitration&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;Any dispute arising out of or in connection with this agreement, including any question regarding its existence, amendment, validity or termination, shall be referred to &amp; finally resolved by arbitration in accordance with the Indian Arbitration &amp; Conciliation Act, 1996. The arbitration shall be a "documents only", evidence through affidavits "fast track" arbitration. The Tribunal shall consist of one (1) arbitrator to be appointed by Kasturi &amp; Sons Limited. The exclusive seats of arbitration shall be Chennai, India &amp; the language of the arbitration shall be English.&lt;/p&gt;
+
+&lt;u&gt;Governing Law&lt;/u&gt;
+&lt;br&gt;
+This agreement shall be governed by &amp; construed in accordance with the laws of India.
+
+User access to &amp; use of the Site is subject to all applicable laws.
+&lt;br&gt;
+&lt;u&gt;Jurisdiction&lt;/u&gt;
+&lt;br&gt;
+&lt;p&gt;In respect of all matters/disputes arising out of, in connection with or in relation to this agreement, only the civil courts at Chennai City, India shall have jurisdiction, to the exclusion of all other courts.&lt;/p&gt;
+&lt;br&gt;
+&lt;u&gt;Publication&lt;/u&gt;
+&lt;br&gt;
+The Web site is deemed to be published from/at Chennai City, India (irrespective of where it is accessed from).
+&lt;br&gt;&lt;br&gt;
+&lt;u&gt;Communications&lt;/u&gt;
+&lt;br&gt;&lt;br&gt;
+All communications and notices of any kind may be sent to:
+&lt;br&gt;
+Kasturi &amp; Sons Ltd
+Kasturi Buildings
+859-860, Anna Salai
+Chennai-600002
+India
+&lt;br&gt;
+</string>
+    <string name="terms_conditions_phone">Tel: +91-44-28576300</string>
+    <string name="terms_conditions_email">Email: web.thehindu@thehindu.co.in</string>
+    <string name="how_to">Thank you for downloading The Hindu Business Line Android app. Here\'s some help on how to use the app.&lt;br&gt;
+&lt;br&gt;
+1. Follow your favorite subjects or topics.&lt;br&gt;
+Scroll to the bottom of the home screen and tap on "+Add sections" and add your favorite sections to the app\'s home screen.&lt;br&gt;
+&lt;br&gt;
+2. Read whenever you want. Save articles for reading later.&lt;br&gt;
+When you are viewing an article, press the option key or tap the menu icon to bring up the context sensitive menu that will allow you to add the article to your favorites. Go to the \'Favorites\' section to find them and read later. You can long press the article tile in the \'Favorites\' section to remove it from the list once you are done.&lt;br&gt;
+&lt;br&gt;
+3. Read more, easily.&lt;br&gt;
+Swipe an article from right to left to get the next one from the section. Also, swipe sections from left to right to go to the previous and next section in the navigation menu. You can swipe between subsections of a section by opening any one subsection from navigation menu and swipe across subsections of the same section.&lt;br&gt;
+&lt;br&gt;
+4. Get Quote for any company by clicking on the \'Get Quote\' icon from topmost action bar.&lt;br&gt;
+5. Click on BSE, NSE, Gold or Forex to get to the respective screens for a list of corresponding item.&lt;br&gt;
+&lt;br&gt;
+That\'s it! Have a great experience.</string>
+
+    <string name="about_us_menu">About us</string>
+    <string name="info_version">Version 2.0</string>
+    <string name="powerd_by">Powered by </string>
+
+
+    <string name="comscore_customer_c2">11398210</string>
+    <string name="comscore_publisher_secret">7374b487c7c1a5f24aab4967f9818dec</string>
+
+    <!--<string name="vmax_adspot_id">20846</string>-->
+    <string name="vmax_adspot_id_home_bottom">bc43aeb3</string>
+    <!--<string name="vmax_adspot_id_home_top">62b4386a</string>-->
+    <string name="vmax_adspot_id_ros_bottom">42070ad8</string>
+    <!--<string name="vmax_adspot_id_ros_top">V75748119</string>-->
+    <string name="vmax_adspot_id_interstitial">326dfe57</string>
+    <string name="vmax_adspot_id_interstitial_first_tap">db0e5b62</string>
+    <!--<string name="vmax_adspot_id_native">V051e7596</string>-->
+    <!--<string name="vmax_adspot_id_native">26d59d86</string>-->
+    <string name="vmax_adspot_id_inline_ros">ac096bf4</string>
+    <string name="vmax_adspot_id_inline_home">35003a4e</string>
+    <string name="vmax_adspot_id_native_ros">3bdbb27c</string>
+    <string name="vmax_adspot_id_native_home">4cdc82ea</string>
+    <string name="vmax_adspot_id_splash_screen">c245d1a0</string>
+
+    <!--Vmax end-->
+
+    <!--Lotame Analytics String-->
+
+    <string name="la_action">seg</string>
+    <string name="la_section">Section : </string>
+    <string name="la_app_open">App Open</string>
+    <string name="la_search">Search</string>
+    <string name="la_search_colon">Search : </string>
+    <string name="la_share">Share </string>
+    <!--Lotame end-->
+
+    <!--Google Analytics screen Name -->
+    <string name="ga_news_digest_fragment">News Digest Screen</string>
+    <string name="ga_article_from_news_digest">Article From News Digest Screen</string>
+    <string name="ga_sidebar_category">Navigation Drawer</string>
+    <string name="ga_setting">Setting Screen</string>
+    <string name="ga_post_comment">Post comment Screen</string>
+    <string name="ga_comment_list">Comment Screen</string>
+    <string name="ga_preference">Preference Screen</string>
+    <string name="ga_splash_screen">Splash Screen</string>
+    <string name="ga_onboarding_screen">OnBoarding Screen</string>
+    <string name="ga_stockdetail_bse_screen">BSE Screen</string>
+    <string name="ga_stockdetail_nse_screen">NSE Screen</string>
+    <string name="ga_quotedetail_screen">Quote Detail Screen</string>
+    <string name="ga_forex_screen">Forex Screen</string>
+    <string name="ga_gold_screen">Commodities Screen</string>
+    <string name="ga_portfolio_screen">Portfolio Screen</string>
+    <string name="ga_overlay_screen">Overlay Screen</string>
+    <string name="ga_gcm_screen">Push Notification Screen</string>
+    <string name="ga_search">Search Screen</string>
+    <string name="ga_article_read">Read Article</string>
+    <string name="ga_article_view">Article View</string>
+    <string name="ga_video_view">Video Screen</string>
+    <string name="ga_home">Home Screen</string>
+    <string name="ga_bookmarks">Bookmark Screen</string>
+    <string name="ga_action">Action</string>
+    <string name="ga_action_button_click">Button Click</string>
+    <string name="ga_action_image_click">Image Click</string>
+    <string name="ga_article_detail_lebel">Article Detail Screen</string>
+    <string name="ga_bookmark_screen_button_clicked">Bookmark icon click</string>
+    <string name="ga_bookmark_article_button_clicked">Article detail: Bookmark button clicked</string>
+    <string name="ga_bookmark_read_later_button_clicked">Read later: Bookmark button clicked</string>
+    <string name="ga_article_back_button_clicked">Article detail: Back button clicked</string>
+    <string name="ga_article_share_button_clicked">Article detail: Share button clicked</string>
+    <string name="ga_article_audio_button_clicked">Article detail: Audio button clicked</string>
+    <string name="ga_section_share_button_clicked">Section: Share button clicked</string>
+    <string name="ga_article_text_button_clicked">Article detail: Font Size button clicked</string>
+    <string name="ga_article_comment_button_clicked">Article detail: Comments button clicked</string>
+    <string name="ga_article_postcomment_button_clicked">Article detail: Post comment button clicked</string>
+    <string name="ga_article_video_button_clicked">Article detail: Video button clicked</string>
+    <string name="ga_article_main_image_clicked">Article detail: Article image clicked</string>
+    <string name="ga_article_outbrain_more_clicked">Article detail: More from hindu article clicked</string>
+    <string name="ga_article_outbrain_around_clicked">Article detail: From around the web article clicked</string>
+
+    <!--Portfolio GA-->
+
+    <string name="ga_signin">Sign In Screen</string>
+    <string name="ga_signup">Sign Up Screen</string>
+    <string name="ga_forgot_password">Forgot password Screen</string>
+    <string name="ga_user_profile">User Profile Screen</string>
+    <string name="ga_change_password">Change Password Screen</string>
+    <string name="ga_edit_profile">Edit Profile Screen</string>
+    <!--GA End-->
+
+
+    <!-- Settings -->
+    <string name="info_article_size">Article Font Size</string>
+    <string name="info_location">Detect Location</string>
+    <string name="info_mode">Night Mode</string>
+    <string name="info_push_notification">Push Notification</string>
+    <string name="info_city_interest">Cities of Interest</string>
+    <string name="info_article_small">Small</string>
+    <string name="info_article_large">Large</string>
+    <string name="info_article_medium">Medium</string>
+    <string name="info_article_xlarge">Extra Large</string>
+    <string name="info_article_s">S</string>
+    <string name="info_article_m">M</string>
+    <string name="info_article_l">L</string>
+    <string name="info_article_xl">XL</string>
+
+    <!-- Notifications -->
+    <string name="info_no_notifications">We dont have any notifications for you now</string>
+    <string name="info_unread_notifications">You have some unread articles in read later</string>
+    <string name="info_notifications">Get notifications based on the selected tags</string>
+    <string name="title_notifications">Notifications</string>
+    <!--Transac-<Name>-<Number>-->
+    <string name="info_transac">Transac</string>
+
+    <!-- Cities of interest-->
+    <string name="info_cities_of_interest">Get personalized news feeds from the selected cities</string>
+    <string name="info_cities_of_interest_new">Cities of Choice</string>
+
+    <string name="title_city_interest">Cities of Interest</string>
+    <string name="what_is_url">http://www.outbrain.com/what-is/default/en-mobile/</string>
+
+
+    <!-- Staic Page Buttons-->
+    <string name="button_save">Save</string>
+    <string name="button_next">Next</string>
+    <string name="button_reset">Reset</string>
+    <string name="added_to_bookmark">Added to Read Later</string>
+    <string name="removed_from_bookmark">Removed from Read Later</string>
+
+    <!--Flurry integration-->
+    <string name="flurryAppKey">T2XBPW9Y6GMXWWN3F5R8</string>
+    <string name="flurry_page_view">Page View</string>
+    <string name="flurry_orientation_change_view">Configuration changed View</string>
+    <string name="flurry_refresh_view">Refresh View</string>
+    <string name="flurry_search_view">Search Screen</string>
+    <string name="flurry_section_view">Section View</string>
+    <string name="flurry_article_view">Article View</string>
+    <string name="flurry_navigation_view">Navigation View</string>
+    <string name="flurry_image_view">Image Screen</string>
+    <string name="flurry_settings_view">Settings View</string>
+    <string name="flurry_help_view">Help View</string>
+    <string name="flurry_about_us_view">About Us View</string>
+    <string name="flurry_subscribe_notification">Notification Subscription</string>
+    <string name="flurry_un_subscribe_notification">Notification Un Subscription</string>
+    <string name="flurry_t_and_c_view">Terms and conditions View</string>
+    <string name="flurry_video_view">Video View</string>
+    <string name="flurry_article_read_on_web">Article read on web</string>
+    <string name="flurry_sidebar_category">Sidebar Category</string>
+    <string name="flurry_customize_news">Customize news feed</string>
+    <string name="flurry_bookmark">Bookmark</string>
+    <string name="flurry_news_digest_button_clicked">News Digest Button Clicked</string>
+    <string name="flurry_news_digest_pushN">News Digest from push notification</string>
+    <string name="flurry_article_from_news_digest">Article from news digest</string>
+    <string name="select_atleast_five_section">You need to select atleast 5 sections</string>
+
+    <!--flurry end-->
+    <string name="terms_and_condition"></string>
+    <string name="customise_home">Personalise Home Screen</string>
+    <string name="snackbar_title_text">No internet connection</string>
+    <string name="snackbar_something_went_wrong">Something went wrong.</string>
+
+    <string name="outbrain_widget_id">SDK_4</string>
+    <string name="outbrain_widget_id_article">SDK_3</string>
+    <string name="stories_around_the_world">Sponsored Stories</string>
+    <string name="custom_home_screen">Personalise Home Screen</string>
+    <string name="custom_local_screen">Localise Home Screen</string>
+
+
+    <string name="stock_latest_price">Latest Price</string>
+    <string name="stock_latst_change">Quote Change</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="change">Change</string>
+    <string name="p_change">% Change</string>
+    <string name="stock_name">Name</string>
+    <string name="stock_price">Price</string>
+    <string name="stock_change">Change (%)</string>
+    <string name="market">Markets</string>
+    <string name="currency">Currency</string>
+    <string name="commodities">Commodities</string>
+
+    <string name="exchange_rates">Exchange Rates</string>
+    <string name="currency_inr">Currency (INR)</string>
+    <string name="tt_selling">TT\nSelling</string>
+    <string name="tt_buying">TT\nBuying</string>
+    <string name="bill_selling">BILL\nSelling</string>
+    <string name="bill_buying">BILL\nBuying</string>
+    <string name="bseFullText">Bombay Stock Exchange (BSE)</string>
+    <string name="nseFullText">National Stock Exchange (NSE)</string>
+    <string name="goldTitle">GOLD (INR/10g)</string>
+    <string name="forexTitle">USD/INR</string>
+    <string name="nseTitle">NIFTY</string>
+    <string name="bseTitle">SENSEX</string>
+    <string name="newsFeedText">Top News</string>
+
+    <string name="about_us">Business Line is a daily publication which caters to news from industry and markets, along with expert opinions and features on markets, industry, economy and technology.&lt;br&gt;
+
+This app is designed to provide you an immersive reading experience even as you keep yourself updated with business news on the go. You can now make informed business/investment decisions with the help of our expert opinions and holistic coverage of news from the market.&lt;br&gt;
+&lt;br&gt;
+Disclaimer:&lt;br&gt;
+All information provided in the Business Line app is for informational purposes only, not intended for trading purposes or advice. Neither Kasturi &amp; Sons Ltd, the sole proprietor of \'Business Line\' nor any of our data providers are liable for any informational or other  errors, incompleteness, or delays, or for the consequence of  any actions taken in reliance on information contained herein.</string>
+    <string name="search_title">Get Quote</string>
+
+
+    <!--DFP Ads Ids -->
+
+    <string name="dfp_home_banner">/22390678/BL_Android_HP_320x50</string>
+    <string name="dfp_ros_banner">/22390678/BL_Android_SP_320x50</string>
+
+    <string name="dfp_home_inline">/22390678/BL_Android_HP_300x250</string>
+    <string name="dfp_ros_inline">/22390678/BL_Android_SP_300x250</string>
+
+    <string name="dfp_interstitial">/22390678/BL_Android_AT_Interstitial</string>
+
+    <string name="dfp_article_banner">/22390678/BL_Android_AT_320x50</string>
+    <string name="dfp_article_inline">/22390678/BL_Android_AT_300x250</string>
+    <string name="dfp_article_footer">/22390678/BL_Android_AT_Footer</string>
+
+    <string name="dfp_article_middle">/22390678/BL_Android_AT_Middle</string>
+    <string name="dfp_article_bottom">/22390678/BL_Android_AT_Bottom</string>
+    <string name="dfp_article_sticky">/22390678/BL_Android_AT_Sticky</string>
+
+
+    <string name="dfp_test_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="dfp_all_sticky">/22390678/BL_Android_AT_Sticky</string>
+
+
+    <string name="dfp_home_sticky">/22390678/BL_Android_HP_Sticky</string>
+
+    <string name="dfp_native_first">/22390678/BL_Android_Native01</string>
+    <string name="dfp_native_second">/22390678/BL_Android_Native02</string>
+    <string name="dfp_native_third">/22390678/BL_Android_Native03</string>
+
+    <!--DFP Ads Ids ends-->
+
+
+    <string name="title_activity_portfolio">PortfolioActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_name">Name</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_current_password">Current Password</string>
+    <string name="prompt_new_password">New Password</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="prompt_phone_number">Phone Number</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="email_field_required">Please enter the Valid email ID</string>
+    <string name="all_field_mendatory">All fields are mandatory</string>
+    <string name="password_field_required">Please enter at least 6 characters in your password</string>
+    <string name="password_not_matching">Password not matching, please enter the correct password</string>
+    <string name="sign_in">Login</string>
+    <string name="please_provide">Please login to view your portfolio</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="not_a_register">Not a registered user?</string>
+    <string name="already_register">Already have an account?</string>
+    <string name="signup">Sign Up</string>
+
+    <string name="signupnow">Now it is free!</string>
+    <string name="forgot_pass">Forgot your password?</string>
+    <string name="reset_password">Reset Password</string>
+
+    <string name="my_profile">My Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="verifyEmailMessage">Please check the verification email that was sent to your registered email address. If you face any issues, please send an email to product@thehindu.co.in.</string>
+    <string name="verifyEmailHeading">You have not verified your account.</string>
+    <string name="badCredential">Please check your Login Email and Password and try again.</string>
+    <string name="indices">Indices</string>
+    <string name="today_rate">Today’s Rate</string>
+
+    <string name="read_aloud">Read Aloud</string>
+
+
+    <!-- Taboola -->
+    <string name="ga_article_taboola_organic_clicked" tools:ignore="ExtraTranslation">Article detail: Taboola Organic Hindu article clicked</string>
+    <string name="ga_article_taboola_nonorganic_clicked">Article detail: Taboola Non Organic article clicked</string>
+
+
+    <string name="taboola_pub">thehindu-businesslineandroid</string>
+    <string name="taboola_mode">thumbnails-a</string>
+    <string name="taboola_pagetype">article</string>
+    <string name="taboola_placement">Below Article Thumbnails</string>
+    <string name="taboola_targetype">mix</string>
+    <string name="search_article_title">Articles</string>
+    <string name="search_stock_title">Stocks</string>
+    <string name="search_by_aticle_hint">Search for Articles</string>
+    <string name="search_by_stock_hint">Search for Stocks</string>
+    <bool name="taboola_scrollenabled">true</bool>
+    <bool name="taboola_autoresizeheight">true</bool>
+
+</resources>

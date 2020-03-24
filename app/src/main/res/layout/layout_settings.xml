@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_home_widget_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_article_size"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp">
+
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info_article_size"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_static_text" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textView_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_warm_grey" />
+
+        <ImageView
+            android:id="@+id/imageView_size"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_arrow_drop_down_wrapper" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_font_size"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:animateLayoutChanges="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_article_size" />
+
+        <SeekBar
+            android:id="@+id/seekbar_font_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp" />
+    </LinearLayout>
+
+    <View
+        style="@style/dividerStyle"
+        android:visibility="gone"
+        />
+
+    <Switch
+        android:id="@+id/switch_location"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:padding="15dp"
+        android:text="@string/info_location"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"/>
+
+    <View
+        style="@style/dividerStyle"
+        />
+
+    <Switch
+        android:id="@+id/switch_daymode"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:padding="15dp"
+        android:text="@string/info_mode"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <View
+        style="@style/dividerStyle"
+        />
+
+    <Switch
+        android:id="@+id/switch_push_notification"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:padding="15dp"
+        android:text="@string/info_push_notification"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RelativeLayout
+        android:id="@+id/layout_city_interest"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp"
+        android:visibility="gone">
+
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textView_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info_city_interest"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_static_text" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textView_city_interest"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView_city"
+            android:layout_alignStart="@+id/textView_city"
+            android:layout_below="@+id/textView_city"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_warm_grey" />
+
+        <ImageView
+            android:id="@+id/imageView_city"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/arrow_drop_down" />
+    </RelativeLayout>
+
+    <!--TTS Setting-->
+    <View style="@style/dividerStyle" />
+
+    <RelativeLayout
+        android:id="@+id/ttsSettingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="15dp">
+
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/tts1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read_aloud"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_static_text" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/tts2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tts1"
+            android:text="English (india)"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_warm_grey" />
+
+        <ImageView
+            android:id="@+id/ttsArrowRight"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_arrow_right_wrapper" />
+    </RelativeLayout>
+
+
+    <View
+        style="@style/dividerStyle"
+        />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/gdprSettingTxt"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingLeft="15dp"
+        android:gravity="center_vertical"
+        android:text="GDPR Setting"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/color_static_text"
+        android:visibility="gone"
+        />
+
+    <View style="@style/dividerStyle"
+        android:id="@+id/gdprDivider"/>
+</LinearLayout>

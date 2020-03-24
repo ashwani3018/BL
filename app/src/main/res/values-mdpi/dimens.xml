@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="speed_seekbar_top_margin">9.2dp</dimen>
+    <dimen name="pitch_seekbar_top_margin">9.5dp</dimen>
+</resources>

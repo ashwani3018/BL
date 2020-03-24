@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/Widget.ActionButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/toolbar_background_color"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/hotlist_bell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp"
+        android:contentDescription="Notification Icon"
+        android:src="@mipmap/comment" />
+
+    <TextView
+        android:id="@+id/textview_comment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@mipmap/notify_bg"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        android:visibility="gone" />
+</FrameLayout>

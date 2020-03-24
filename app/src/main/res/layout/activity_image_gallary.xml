@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mobstac.thehindubusinessline.activity.ImageGallaryActivity">
+
+    <include
+        android:id="@+id/progress_container"
+        layout="@layout/progress_layout" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/imagePager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/Black" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/selection_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.7"
+        android:background="@color/color_primary"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</FrameLayout>

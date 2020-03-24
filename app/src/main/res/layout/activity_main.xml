@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="activity.MainActivity">
+
+    <include layout="@layout/main_layout_app" />
+
+    <LinearLayout
+        android:id="@+id/navigation_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/color_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/navigationParent"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/white"
+            android:padding="25dp">
+
+            <ImageView
+                android:id="@+id/navigationBarLogo"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@mipmap/logo" />
+        </RelativeLayout>
+
+        <View style="@style/dividerStyle" />
+
+        <ExpandableListView
+            android:id="@+id/navigation_expandable_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/color_home_widget_background"
+            android:childDivider="@android:color/transparent"
+            android:childIndicator="@null"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:groupIndicator="@null"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dfpCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/article_bg_color"
+    android:gravity="center"
+    android:orientation="vertical"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:id="@+id/dfpLinearyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/dfpFramLayout"
+            android:layout_width="302dp"
+            android:layout_height="252dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/interstetial_ads_bg"
+            android:visibility="visible"></FrameLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
+
+
+

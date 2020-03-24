@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_user"
+        android:icon="@drawable/user_profile"
+        android:title="User Profile"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/search"
+        android:icon="@mipmap/search"
+        android:title="Search Qoute"
+        android:visible="false"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_speak"
+        android:icon="@drawable/audio"
+        android:title="Speak"
+        android:visible="false"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_comment"
+        android:icon="@mipmap/comment"
+        android:title="Comments"
+        android:visible="false"
+        app:actionLayout="@layout/layout_comment_badge"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_bookmarks"
+        android:icon="@mipmap/bookmarks_icon_day"
+        android:title="Read Later"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_textsize"
+        android:icon="@mipmap/text_size"
+        android:title="Text Size"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_share_article"
+        android:icon="@mipmap/share"
+        android:title="Share Article"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_overflow"
+        android:orderInCategory="100"
+        android:title=""
+        android:visible="false"
+        app:actionLayout="@layout/layout_overflow_badge"
+        app:showAsAction="always" />
+</menu>

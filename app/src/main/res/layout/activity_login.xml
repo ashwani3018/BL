@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.mobstac.thehindubusinessline.activity.LoginActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <FrameLayout
+        android:id="@+id/login_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/layout_add_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/page_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/page_background"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/homeBottomLine"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/bottom_ads_top_strip_color"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/homeBottomAdHolder"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/page_background"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_background" />
+
+            <include layout="@layout/bottom_navigation_view" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

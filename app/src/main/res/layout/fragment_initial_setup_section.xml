@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_home_widget_background"
+    android:orientation="vertical">
+
+    <com.mobstac.thehindubusinessline.view.LatoBoldTextView
+        android:id="@+id/selectTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:text="@string/intital_setup_customize"
+        android:textAllCaps="true"
+        android:textColor="@color/color_custom_header_text"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+        android:id="@+id/selectInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/white"
+        android:gravity="start"
+        android:maxLines="3"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/intital_setup_customize_info"
+        android:textAllCaps="false"
+        android:textColor="#233137"
+        android:textSize="14sp" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none">
+
+        <com.mobstac.thehindubusinessline.view.TagFlowLayout
+            android:id="@+id/id_flowlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:gravity="left"
+            app:max_select="-1"
+            app:paddingEnd="10dp"
+            app:paddingStart="10dp" />
+    </ScrollView>
+
+</LinearLayout>

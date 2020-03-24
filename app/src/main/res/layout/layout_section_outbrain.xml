@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_horizontal_margin"
+    android:elevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_home_explore_background"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/banner_title_margin"
+        android:paddingRight="@dimen/banner_title_margin">
+
+        <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/banner_title_margin"
+            android:paddingTop="@dimen/banner_title_margin"
+            android:text="@string/info_outbrain"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_banner_text" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_outbrain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/explore_content_marginTop" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    tools:context="com.mobstac.thehindubusinessline.fragments.NotificationFragment">
+
+
+    <LinearLayout
+        android:id="@+id/some_bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/notification_header_color"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:src="@mipmap/flag" />
+
+        <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+            android:id="@+id/textview_no_boomarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/info_unread_notifications"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/no_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:drawableTop="@mipmap/notify_graphics"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/info_no_notifications"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/some_bookmarks"
+        android:clipToPadding="false"
+        android:paddingBottom="55dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

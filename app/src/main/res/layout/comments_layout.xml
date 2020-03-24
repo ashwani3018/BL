@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/color_comment_from"
+        android:textSize="16sp" />
+
+    <com.mobstac.thehindubusinessline.view.SerifOffcTextView
+        android:id="@+id/posted_on"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/text_warm_grey"
+        android:textSize="14sp" />
+
+    <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+        android:id="@+id/comments_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/color_comment_text"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

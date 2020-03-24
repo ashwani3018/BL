@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_home_widget_background">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical|center_horizontal" />
+
+
+    <com.mobstac.thehindubusinessline.view.CustomArticleScrollView
+        android:id="@+id/article_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_home_widget_background"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/article_details_view" />
+
+            <include layout="@layout/article_footer_adview" />
+
+            <include layout="@layout/divider" />
+
+            <include layout="@layout/comments_view" />
+
+            <include layout="@layout/divider" />
+
+            <include layout="@layout/related_article_view" />
+
+            <!-- Specify target_type only if it's specified by your Taboola account manager. -->
+            <com.taboola.android.TaboolaWidget
+                android:id="@+id/taboola_widget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="73dp"
+                android:background="@android:color/white"
+                />
+
+           <!-- <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />-->
+        </LinearLayout>
+    </com.mobstac.thehindubusinessline.view.CustomArticleScrollView>
+
+    <RelativeLayout
+        android:id="@+id/transparent_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/login_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#1375b3"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <com.mobstac.thehindubusinessline.view.LatoRegularTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#1375b3"
+                android:text="Please login to your account to view more"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="10dp"
+                android:background="#1375b3"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_fill_white"
+                    android:text="Login"
+                    android:textColor="#1375b3" />
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_fill_white"
+                    android:text="Register"
+                    android:textColor="#1375b3" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/supportingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_alignParentBottom="true"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

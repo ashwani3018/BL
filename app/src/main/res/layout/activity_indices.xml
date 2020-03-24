@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mobstac.thehindubusinessline.activity.PortfolioActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_background"
+        android:orientation="vertical">
+
+        <com.mobstac.thehindubusinessline.view.CustomTabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/color_titlestrip_background"
+            android:elevation="5dp"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/tabIndicatorColor"
+            app:tabIndicatorHeight="2dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/tabSelectedTextColor"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/tabTextColor" />
+
+        <com.mobstac.thehindubusinessline.view.CustomViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="346dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout_add_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/page_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/page_background"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/homeBottomLine"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/bottom_ads_top_strip_color"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/homeBottomAdHolder"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/page_background"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_background" />
+
+            <include layout="@layout/bottom_navigation_view" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

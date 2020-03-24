@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/categories_nse_bse_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="14dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="14dp">
+
+    <com.mobstac.thehindubusinessline.view.LatoSemiBoldTextView
+        android:id="@+id/name_row_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:text="@string/name"
+        android:textColor="@color/forex_text_color" />
+
+    <com.mobstac.thehindubusinessline.view.LatoSemiBoldTextView
+        android:id="@+id/price_row_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:paddingLeft="12dp"
+        android:text="@string/price"
+        android:textColor="@color/forex_text_color" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <com.mobstac.thehindubusinessline.view.LatoSemiBoldTextView
+            android:id="@+id/change_row_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/change"
+            android:textColor="@color/forex_text_color"
+            android:textSize="14sp" />
+
+        <com.mobstac.thehindubusinessline.view.LatoSemiBoldTextView
+            android:id="@+id/percent_change_row_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/p_change"
+            android:textColor="@color/forex_text_color"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</LinearLayout>
