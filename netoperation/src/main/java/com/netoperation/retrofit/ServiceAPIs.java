@@ -38,47 +38,47 @@ public interface ServiceAPIs {
     @POST("/userreco")
     Observable<JsonElement> recommendation(@Body JsonObject recommendationBody);
 
-    @POST("/taiauth/login/HINDU")
+    @POST("/v1/auth/login/HINDU") // BL
     Observable<JsonElement> login(@Body JsonObject loginBody);
 
-    @POST("/taiauth/regSubmit/HINDU")
+    @POST("/v1/auth/regSubmit/HINDU") // BL
     Observable<JsonElement> signup(@Body JsonObject logoutBody);
 
-    @POST("/taiauth/logout/hindu")
+    @POST("/v1/auth/logout/hindu") // BL
     Observable<JsonElement> logout(@Body JsonObject loginBody);
 
-    @POST("/taiauth/userVerify/HINDU")
+    @POST("/v1/auth/userVerify/HINDU") // BL
     Observable<JsonElement> userVerification(@Body JsonObject userVerificationBody);
 
-    @POST("/taiauth/resetPassword/HINDU")
+    @POST("/v1/auth/resetPassword/HINDU") // BL
     Observable<JsonElement> resetPassword(@Body JsonObject resetPasswordBody);
 
-    @POST("/taiauth/userInfo/HINDU")
+    @POST("/v1/auth/userInfo/HINDU") // BL
     Observable<JsonElement> userInfo(@Body JsonObject userInfoBody);
 
-    @POST("/taiauth/updateUserInfo/HINDU")
+    @POST("/v1/auth/updateUserInfo/HINDU") // BL
     Observable<JsonElement> editProfile(@Body JsonObject editProfileBody);
 
-    @POST("/taiauth/validateOtp/HINDU")
+    @POST("/v1/auth/validateOtp/HINDU") // BL
     Observable<JsonElement> validateOtp(@Body JsonObject validateOtpBody);
 
-    @POST("/taiauth/updatePassword/HINDU")
+    @POST("/v1/auth/updatePassword/HINDU") // BL
     Observable<JsonElement> updatePassword(@Body JsonObject updatePasswordBody);
 
-    @POST("/taiauth/updateAccountStatus/HINDU")
+    @POST("/v1/auth/updateAccountStatus/HINDU") // BL
     Observable<JsonElement> suspendAccount(@Body JsonObject suspendAccountBody);
 
-    @POST("/taiauth/updateAccountStatus/HINDU")
+    @POST("/v1/auth/updateAccountStatus/HINDU") // BL
     Observable<JsonElement> deleteAccount(@Body JsonObject deleteAccountBody);
 
-    @GET("/mydashboard/userreco/hindu")
+    @GET("/v1/mydashboard/userreco/hindu") // BL
     Observable<RecomendationData> getRecommendation(@Query("userid") String userid, @Query("recotype") String recotype,
                                                     @Query("size") String size, @Query("siteid") String siteid, @Query("requestSource") String requestSource );
 
-    @POST("/mydashboard/userchoice/HINDU")
+    @POST("/v1/mydashboard/userchoice/HINDU") // BL
     Observable<JsonElement> createBookmarkFavLike(@Body JsonObject bookmarkFavLikeBody);
 
-    @GET("/mydashboard/userchoicelist/HINDU")
+    @GET("/v1/mydashboard/userchoicelist/HINDU") // BL
     Observable<List<UserChoice>> getBookmarkFavLike(@Query("userid") String userid, @Query("siteid") String siteid );
 
     @GET("")
@@ -91,39 +91,39 @@ public interface ServiceAPIs {
     @GET("")
     Observable<PrefListModel> getAllPreferences(@Url String url);
 
-    @GET("taiauth/list/HINDU")
+    @GET("/v1/auth/list/HINDU") // BL
     Observable<ArrayList<KeyValueModel>> getCountry(@Query("type") String type);
 
-    @GET("taiauth/list/HINDU")
+    @GET("/v1/auth/list/HINDU") // BL
     Observable<ArrayList<KeyValueModel>> getState(@Query("type") String type, @Query("country") String country);
 
-    @POST("taiauth/updateUserInfo/HINDU")
+    @POST("/v1/auth/updateUserInfo/HINDU") // BL
     Observable<JsonElement> updateProfile(@Body JsonObject updateProfile);
 
-    @POST("taiauth/updateUserInfo/HINDU")
+    @POST("/v1/auth/updateUserInfo/HINDU") // BL
     Observable<JsonElement> updateAddress(@Body JsonObject updateProfile);
 
-    @POST("taiauth/userPreference/hindu")
+    @POST("/v1/auth/userPreference/hindu") // BL
     Observable<JsonElement> setPersonalise(@Body JsonObject updateProfile);
 
-    @POST("taiauth/userPreference/hindu")
+    @POST("/v1/auth/userPreference/hindu") // BL
     Observable<SelectedPrefModel> getPersonalise(@Body JsonObject updateProfile);
 
-    @GET("charging/transaction/detail/HINDU")
+    @GET("/v1/charging/transaction/detail/HINDU") // BL
     Observable<JsonElement> getTxnHistory(@Query("userid") String userid, @Query("pageno") String pageno, @Query("siteId") String siteId, @Query("requestSource") String requestSource);
 
-    @GET("subscription/getuserplaninfo/HINDU")
+    @GET("/v1/subscription/getuserplaninfo/HINDU")
     Observable<UserPlanList> getUserPlanInfo(@Query("userid") String userid, @Query("siteid") String siteid, @Query("requestSource") String requestSource);
 
-    @GET("subscription/getplaninfo/HINDU")
+    @GET("/v1/subscription/getplaninfo/HINDU")
     Observable<PlanRecoModel> getRecommendedPlan(@Query("siteid") String siteid, @Query("tagid") String tagid,
                                                  @Query("isInd") String isInd, @Query("isPlt") String isPlt);
-    @POST("subscription/createsub/HINDU")
+    @POST("/v1/subscription/createsub/HINDU")
     Observable<JsonElement> createSubscription(@Body JsonObject subscriptionBody);
 
 
 
-    @POST("taiauth/socialLogin/HINDU")
+    @POST("/v1/auth/socialLogin/HINDU") // BL
     Observable<JsonElement> socialLogin(@Body JsonObject loginDetails);
 
     @POST("")
