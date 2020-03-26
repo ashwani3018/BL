@@ -128,6 +128,7 @@ public abstract class AdsBaseActivity extends BaseActivity {
         }
 
 
+//        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mAppBarLayout.getLayoutParams();
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mAppBarLayout.getLayoutParams();
         AppBarLayout.Behavior behavior = (AppBarLayout.Behavior) params.getBehavior();
         if(behavior!=null) {
@@ -181,6 +182,10 @@ public abstract class AdsBaseActivity extends BaseActivity {
         if(SharedPreferenceHelper.isUserPreferAdsFree(this)) {
             return;
         }
+
+        /*if(contentUrl == null || contentUrl.isEmpty()) {
+            contentUrl = "https://www.thehindubusinessline.com/economy/budget/feeder/";
+        }*/
         mBannerPublisherAdView = null;
         hideBottomAdView();
         mBannerPublisherAdView = new PublisherAdView(this);

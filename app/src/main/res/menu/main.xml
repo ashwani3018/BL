@@ -44,6 +44,13 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_launch_crown"
+        android:icon="@drawable/dashboard_ico"
+        android:title="TH Premium"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_overflow"
         android:orderInCategory="100"
         android:title=""
