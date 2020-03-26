@@ -91,7 +91,7 @@ public class PortfolioActivity extends AdsBaseActivity {
         fragment = SlidingPortfolioSectionFragment.newInstance( 0, "   Portfolio", ApiCallHandler.FROM_PORTFOLIO);
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, fragment, null)
+        fragmentTransaction.add(R.id.FRAME_CONTENT, fragment, null)
                 .addToBackStack(null)
                 .commit();
     }

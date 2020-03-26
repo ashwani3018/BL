@@ -87,7 +87,7 @@ public class BLInkActivity extends AdsBaseActivity {
         fragment = SlidingPortfolioSectionFragment.newInstance(0, "   BLink", ApiCallHandler.FROM_BLINK);
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, fragment, null)
+        fragmentTransaction.add(R.id.FRAME_CONTENT, fragment, null)
                 .addToBackStack(null)
                 .commit();
     }

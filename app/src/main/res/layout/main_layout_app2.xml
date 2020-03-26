@@ -7,7 +7,6 @@
 
 
 
-
     <!-- Start Bottom Tab, Ads, Subscription Banner, Metered Paywall Layouts-->
     <RelativeLayout
         android:layout_width="match_parent"

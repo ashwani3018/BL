@@ -292,7 +292,7 @@ public class SectionLandingPortfolioAdapter extends RecyclerView.Adapter<Recycle
                             bean.getSid(),
                             isFromPortfolio);
                     ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+                            .replace(R.id.FRAME_CONTENT, fragment).addToBackStack(null).commit();
                 }
             });
 
