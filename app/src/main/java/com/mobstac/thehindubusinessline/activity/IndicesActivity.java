@@ -17,6 +17,9 @@ import com.mobstac.thehindubusinessline.utils.GoogleAnalyticsTracker;
 import com.mobstac.thehindubusinessline.utils.NetworkUtils;
 import com.mobstac.thehindubusinessline.view.CustomTabLayout;
 import com.mobstac.thehindubusinessline.view.CustomViewPager;
+import com.ns.utils.IntentUtil;
+import com.ns.utils.NetUtils;
+import com.ns.utils.THPConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,6 +103,16 @@ public class IndicesActivity extends AdsBaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_launch_crown:
+                if(!NetUtils.isConnected(IndicesActivity.this)) {
+                    showSnackBar(findViewById(R.id.FRAME_CONTENT));
+                    return true;
+                }
+                THPConstants.FLOW_TAB_CLICK = THPConstants.TAP_CROWN;
+                // Open Subscription page
+                IntentUtil.openTHPScreen(IndicesActivity.this, isUserLoggedIn(), -1, isHasFreePlan(), isHasSubscriptionPlan(), THPConstants.TAP_CROWN);
+                return true;
+
             case android.R.id.home:
                 FlurryAgent.logEvent(getString(R.string.ga_sidebar_category));
                 GoogleAnalyticsTracker.setGoogleAnalyticsEvent(this, getString(R.string.ga_action), getString(R.string.ga_sidebar_category), "Section Fragment");

@@ -39,10 +39,18 @@ public class UserProfile {
     private String loginSource;
     private String nextRenewalDate;
     private String userMigrated;
+    private String authorization;
 
     private boolean hasSubscribedPlan;
     private boolean hasFreePlan;
 
+    public String getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        this.authorization = authorization;
+    }
 
     public String getUserEmailOrContact() {
         if(emailId != null && !TextUtils.isEmpty(emailId)) {

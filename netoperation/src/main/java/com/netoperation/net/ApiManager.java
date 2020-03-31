@@ -209,6 +209,7 @@ public class ApiManager {
                                         String redirectUrl = ((JsonObject) value).get("redirectUrl").getAsString();
                                         String userId = ((JsonObject) value).get("userId").getAsString();
                                         String reason = ((JsonObject) value).get("reason").getAsString();
+                                        String token = ((JsonObject) value).get("token").getAsString();
 
                                         if(context != null) {
                                             String loginId = "";
@@ -229,6 +230,7 @@ public class ApiManager {
                                         }
 
                                         keyValueModel.setUserId(userId);
+                                        keyValueModel.setToken(token);
 
                                         String authors_preference = obj.getString("authors_preference");
                                         String cities_preference = obj.getString("cities_preference");
@@ -290,6 +292,7 @@ public class ApiManager {
                                         userProfile.setFid(fid);
                                         userProfile.setTid(tid);
                                         userProfile.setGid(gid);
+                                        userProfile.setAuthorization(token);
 
                                         userProfile.setHasFreePlan(true);
 
@@ -329,6 +332,7 @@ public class ApiManager {
                                     String status = ((JsonObject) value).get("status").getAsString();
                                     String reason = ((JsonObject) value).get("reason").getAsString();
                                     if (((JsonObject) value).has("userId")) {
+
                                         if(isClearDB && context != null) {
                                             // Clearing All Database
                                             THPDB db = THPDB.getInstance(context);
@@ -336,6 +340,8 @@ public class ApiManager {
                                         }
                                         String userId = ((JsonObject) value).get("userId").getAsString();
                                         keyValueModel.setCode(userId);
+                                        String token = ((JsonObject) value).get("token").getAsString();
+                                        keyValueModel.setToken(token);
                                     }
                                     keyValueModel.setState(status);
                                     keyValueModel.setName(reason);
@@ -355,9 +361,9 @@ public class ApiManager {
      * @param usrId
      * @return
      */
-    public static Observable<Boolean> getUserInfo(Context context, String siteId, String deviceId, String usrId, String loginId, String loginPasswd) {
+    public static Observable<Boolean> getUserInfo(Context context, String authorization, String siteId, String deviceId, String usrId, String loginId, String loginPasswd) {
 
-        Observable<JsonElement> observable = ServiceFactory.getServiceAPIs().userInfo(ReqBody.userInfo(deviceId, siteId, usrId));
+        Observable<JsonElement> observable = ServiceFactory.getServiceAPIs().userInfo(authorization, ReqBody.userInfo(deviceId, siteId, usrId));
         return observable.subscribeOn(Schedulers.newThread())
                 .map(responseFromServer -> {
                             if (((JsonObject) responseFromServer).has("status")) {
@@ -594,9 +600,9 @@ public class ApiManager {
      * @param usrId
      * @return
      */
-    public static Observable<UserProfile> getUserInfoObject(Context context, String siteId, String deviceId, String usrId, String loginId, String loginPasswd) {
+    public static Observable<UserProfile> getUserInfoObject(Context context, final String authorization, String siteId, String deviceId, String usrId, String loginId, String loginPasswd) {
 
-        Observable<JsonElement> observable = ServiceFactory.getServiceAPIs().userInfo(ReqBody.userInfo(deviceId, siteId, usrId));
+        Observable<JsonElement> observable = ServiceFactory.getServiceAPIs().userInfo(authorization, ReqBody.userInfo(deviceId, siteId, usrId));
         return observable.subscribeOn(Schedulers.newThread())
                 .map(responseFromServer -> {
                             UserProfile userProfile = new UserProfile();
@@ -748,7 +754,7 @@ public class ApiManager {
                                     // Deleting Previous Profile DB
                                     thpdb.userProfileDao().deleteAll();
 
-
+                                    userProfile.setAuthorization(authorization);
                                     userProfile.setEmailId(emailId);
                                     userProfile.setContact(contact_);
                                     userProfile.setRedirectUrl(redirectUrl);
@@ -1846,7 +1852,7 @@ public class ApiManager {
         for(String topic : topics) {
             ja.add(topic);
         }
-        personaliseObj.add("topic", ja);
+        personaliseObj.add("topics", ja);
 
         ja = new JsonArray();
         for(String city : cities) {
@@ -2008,10 +2014,12 @@ public class ApiManager {
                                         keyValueModel.setNewAccount(true);
                                     }
                                     keyValueModel.setUserId(userId);
+                                    String token = ((JsonObject) value).get("token").getAsString();
+                                    keyValueModel.setToken(token);
 
                                     // If account is new then we need to send free plan API
                                     if(isNew.equals("1")) {
-                                        ApiManager.freePlan(userId, userEmail, siteId);
+                                        ApiManager.freePlan(token, userId, userEmail, siteId);
                                     }
 
                                     return keyValueModel;
@@ -2194,7 +2202,7 @@ public class ApiManager {
         THPPreferences.getInstance(context).setIsRefreshRequired(true);
     }
 
-    public static void freePlan(String userId, String contact, String siteid) {
+    public static void freePlan(String authorization, String userId, String contact, String siteid) {
 
         String trxnid = "A";
         Calendar calendar = Calendar.getInstance();
@@ -2209,7 +2217,7 @@ public class ApiManager {
         trxnid +=thisYear+thisMonth+thisDay+"KCaFREE"+hour+minute+second;
         JsonObject jsonObject = ReqBody.freePlan(userId, contact, trxnid, siteid);
 
-        ServiceFactory.getServiceAPIs().freePlan(jsonObject)
+        ServiceFactory.getServiceAPIs().freePlan(authorization, jsonObject)
                 .subscribeOn(Schedulers.newThread())
                 .repeatWhen(value->{
                     /**
@@ -2234,7 +2242,7 @@ public class ApiManager {
     }
 
 
-    public static Observable<Boolean> freePlanF(String userId, String contact, String siteid) {
+    public static Observable<Boolean> freePlanF(String authorization, String userId, String contact, String siteid) {
 
         String trxnid = "A";
         Calendar calendar = Calendar.getInstance();
@@ -2249,7 +2257,7 @@ public class ApiManager {
         trxnid +=thisYear+thisMonth+thisDay+"KCaFREE"+hour+minute+second;
         JsonObject jsonObject = ReqBody.freePlan(userId, contact, trxnid, siteid);
 
-        return ServiceFactory.getServiceAPIs().freePlan(jsonObject)
+        return ServiceFactory.getServiceAPIs().freePlan(authorization, jsonObject)
                 .subscribeOn(Schedulers.newThread())
                 .map(value->{
                     if (((JsonObject) value).has("status")) {

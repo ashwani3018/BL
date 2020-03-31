@@ -373,8 +373,7 @@ public class SignInFragment extends BaseFragmentTHP implements SocialLoginUtil.S
                                     enableButton(true, false);
                                 } else {
                                     // Making server request to get User Info
-//                                    mDisposable.add(ApiManager.getUserInfo(getActivity(), BuildConfig.SITEID, ResUtil.getDeviceId(getActivity()), userId, emailOrMobile, passwd)
-                                    mDisposable.add(ApiManager.getUserInfoObject(getActivity(), BuildConfig.SITEID, ResUtil.getDeviceId(getActivity()), userId, emailOrMobile, passwd)
+                                    mDisposable.add(ApiManager.getUserInfoObject(getActivity(), keyValueModel.getToken(), BuildConfig.SITEID, ResUtil.getDeviceId(getActivity()), userId, emailOrMobile, passwd)
                                             .observeOn(AndroidSchedulers.mainThread())
                                             .subscribe(userProfile -> {
 

@@ -19,6 +19,7 @@ public class KeyValueModel implements Parcelable {
 
     private String userId;
     private String contact;
+    private String token;
     private boolean isNewAccount;
 
     public boolean isNewAccount() {
@@ -73,6 +74,13 @@ public class KeyValueModel implements Parcelable {
         this.name = name;
     }
 
+    public String getToken() {
+        return "Bearer "+token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     @Override
     public int describeContents() {
@@ -85,6 +93,7 @@ public class KeyValueModel implements Parcelable {
         dest.writeString(this.code);
         dest.writeString(this.State);
         dest.writeString(this.Code);
+        dest.writeString(this.token);
     }
 
     public KeyValueModel() {
@@ -95,6 +104,7 @@ public class KeyValueModel implements Parcelable {
         this.code = in.readString();
         this.State = in.readString();
         this.Code = in.readString();
+        this.token = in.readString();
     }
 
     public static final Creator<KeyValueModel> CREATOR = new Creator<KeyValueModel>() {

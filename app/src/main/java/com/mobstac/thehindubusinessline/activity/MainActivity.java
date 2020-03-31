@@ -48,6 +48,9 @@ import com.mobstac.thehindubusinessline.utils.NetworkUtils;
 import com.mobstac.thehindubusinessline.utils.SharedPreferenceHelper;
 import com.netoperation.retrofit.ServiceFactory;
 import com.ns.thpremium.BuildConfig;
+import com.ns.utils.IntentUtil;
+import com.ns.utils.NetUtils;
+import com.ns.utils.THPConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -391,6 +394,16 @@ public class MainActivity extends AdsBaseActivity implements OnExpandableListVie
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_launch_crown:
+                if(!NetUtils.isConnected(MainActivity.this)) {
+                    showSnackBar(findViewById(R.id.FRAME_CONTENT));
+                    return true;
+                }
+                THPConstants.FLOW_TAB_CLICK = THPConstants.TAP_CROWN;
+                // Open Subscription page
+                IntentUtil.openTHPScreen(MainActivity.this, isUserLoggedIn(), -1, isHasFreePlan(), isHasSubscriptionPlan(), THPConstants.TAP_CROWN);
+                return true;
+
             case android.R.id.home:
                 return false;
 

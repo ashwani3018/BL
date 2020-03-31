@@ -105,7 +105,9 @@ public class AppTabActivity extends BaseAcitivityTHP {
                 .subscribe(userProfile -> {
                     mUserId = userProfile.getUserId();
                         // Fetch latest userinfo from server
-                        ApiManager.getUserInfo(this, BuildConfig.SITEID,
+                        ApiManager.getUserInfo(this,
+                                userProfile.getAuthorization(),
+                                BuildConfig.SITEID,
                                 ResUtil.getDeviceId(this), mUserId,
                                 THPPreferences.getInstance(this).getLoginId(),
                                 THPPreferences.getInstance(this).getLoginPasswd())

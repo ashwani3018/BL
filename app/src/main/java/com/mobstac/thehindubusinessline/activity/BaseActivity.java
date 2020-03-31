@@ -727,6 +727,11 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                     THPPreferences.getInstance(this).setIsRefreshRequired(true);
                     //Open SignIn Page
                     IntentUtil.openSignInOrUpActivity(BaseActivity.this, "signIn");
+
+                    mUserId = "";
+                    mIsUserLoggedIn = false;
+                    mHasFreePlan = false;
+                    mHasSubscriptionPlan = false;
                 });
 
     }
@@ -782,7 +787,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                         String loginId = THPPreferences.getInstance(this).getLoginId();
                         String loginPasswd = THPPreferences.getInstance(this).getLoginPasswd();
                         // Fetch latest userinfo from server
-                        ApiManager.getUserInfo(this, BuildConfig.SITEID,
+                        ApiManager.getUserInfo(this, userProfile.getAuthorization(), BuildConfig.SITEID,
                                 ResUtil.getDeviceId(this), mUserId, loginId, loginPasswd)
                                 .subscribe(val->{
                                     Log.i("", "");

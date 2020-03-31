@@ -17,6 +17,9 @@ import com.mobstac.thehindubusinessline.utils.AppUtils;
 import com.mobstac.thehindubusinessline.utils.Constants;
 import com.mobstac.thehindubusinessline.utils.GoogleAnalyticsTracker;
 import com.mobstac.thehindubusinessline.utils.SharedPreferenceHelper;
+import com.ns.utils.IntentUtil;
+import com.ns.utils.NetUtils;
+import com.ns.utils.THPConstants;
 
 public class PortfolioActivity extends AdsBaseActivity {
 
@@ -47,6 +50,16 @@ public class PortfolioActivity extends AdsBaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_launch_crown:
+                if(!NetUtils.isConnected(PortfolioActivity.this)) {
+                    showSnackBar(findViewById(R.id.FRAME_CONTENT));
+                    return true;
+                }
+                THPConstants.FLOW_TAB_CLICK = THPConstants.TAP_CROWN;
+                // Open Subscription page
+                IntentUtil.openTHPScreen(PortfolioActivity.this, isUserLoggedIn(), -1, isHasFreePlan(), isHasSubscriptionPlan(), THPConstants.TAP_CROWN);
+                return true;
+
             case R.id.action_user:
                 boolean isUserLoggedIn = SharedPreferenceHelper.getBoolean(this, Constants.PORTFOLIO_IS_USER_LOGIN, false);
                 if (!isUserLoggedIn) {

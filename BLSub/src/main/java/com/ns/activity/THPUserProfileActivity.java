@@ -166,6 +166,7 @@ public class THPUserProfileActivity extends AppLocationActivity implements OnSub
                 //getUserInfoApiCall();
                 showProgressDialog("\nVerifying transaction status ...");
                 ApiManager.getUserInfo(this, BuildConfig.SITEID,
+                        mUserProfile.getAuthorization(),
                         ResUtil.getDeviceId(this), mUserProfile.getUserId(),
                         THPPreferences.getInstance(this).getLoginId(),
                         THPPreferences.getInstance(this).getLoginPasswd())
@@ -460,7 +461,9 @@ public class THPUserProfileActivity extends AppLocationActivity implements OnSub
                 .subscribe(paytmTransactionStatus -> {
                     //hideProgressDialog();
                     //getUserInfoApiCall();
-                    ApiManager.getUserInfo(this, BuildConfig.SITEID,
+                    ApiManager.getUserInfo(this,
+                            mUserProfile.getAuthorization(),
+                            BuildConfig.SITEID,
                             ResUtil.getDeviceId(this), mUserProfile.getUserId(),
                             THPPreferences.getInstance(this).getLoginId(),
                             THPPreferences.getInstance(this).getLoginPasswd())
@@ -501,7 +504,9 @@ public class THPUserProfileActivity extends AppLocationActivity implements OnSub
     }
 
     private void getUserInfoApiCall() {
-        ApiManager.getUserInfo(this, BuildConfig.SITEID,
+        ApiManager.getUserInfo(this,
+                mUserProfile.getAuthorization(),
+                BuildConfig.SITEID,
                 ResUtil.getDeviceId(this), mUserProfile.getUserId(),
                 THPPreferences.getInstance(this).getLoginId(),
                 THPPreferences.getInstance(this).getLoginPasswd())

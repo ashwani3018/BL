@@ -24,6 +24,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import retrofit2.http.Url;
@@ -54,7 +55,7 @@ public interface ServiceAPIs {
     Observable<JsonElement> resetPassword(@Body JsonObject resetPasswordBody);
 
     @POST("/v1/auth/userInfo/HINDU") // BL
-    Observable<JsonElement> userInfo(@Body JsonObject userInfoBody);
+    Observable<JsonElement> userInfo(@Header("Authorization") String authorization, @Body JsonObject userInfoBody);
 
     @POST("/v1/auth/updateUserInfo/HINDU") // BL
     Observable<JsonElement> editProfile(@Body JsonObject editProfileBody);
@@ -155,8 +156,8 @@ public interface ServiceAPIs {
     Observable<Void> eventCapture(@Body JsonObject captureBody);
 
 
-    @POST("/subscription/createfreesub/HINDU")
-    Observable<JsonElement> freePlan(@Body JsonObject recommendationBody);
+    @POST("/v1/subscription/createfreesub/HINDU") // BL
+    Observable<JsonElement> freePlan(@Header("Authorization") String authorization, @Body JsonObject recommendationBody);
 
 
     @GET("")
