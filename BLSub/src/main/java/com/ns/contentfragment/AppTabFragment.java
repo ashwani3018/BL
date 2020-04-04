@@ -147,26 +147,42 @@ public class AppTabFragment extends BaseFragmentTHP implements OnSubscribeBtnCli
                 if (menuItem.getItemId() == R.id.menu_home) {
                     if (mFrom != null && mFrom.equalsIgnoreCase(getString(R.string.menu_home))) {
                         getActivity().finish();
-                        return true;
                     }
+
+                    Intent intent = new Intent("com.mobstac.thehindubusinessline.activity.openHomeActivity");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    intent.putExtra("selectedPosition", 1);
+                    startActivity(intent);
+
+                    return false;
 
                 } else if (menuItem.getItemId() == R.id.menu_portfolio) {
                     if (mFrom != null && mFrom.equalsIgnoreCase(getString(R.string.menu_portfolio))) {
                         getActivity().finish();
-                        return true;
+
                     }
+
+                    Intent intent = new Intent("com.mobstac.thehindubusinessline.activity.openPortfolioActivity");
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    intent.putExtra("selectedPosition", 2);
+                    startActivity(intent);
+
+                    return false;
+
                 } else if (menuItem.getItemId() == R.id.menu_mystories) {
 
                 } else if (menuItem.getItemId() == R.id.menu_market) {
                     if (mFrom != null && mFrom.equalsIgnoreCase(getString(R.string.menu_market))) {
                         getActivity().finish();
-                        return true;
+
                     }
 
                     Intent intent = new Intent("com.mobstac.thehindubusinessline.activity.openIndicesActivity");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     intent.putExtra("selectedPosition", 4);
                     startActivity(intent);
+
+                    return false;
                 } else if (menuItem.getItemId() == R.id.menu_profile) {
                     IntentUtil.openUserProfileActivity(getActivity(), THPConstants.FROM_USER_PROFILE);
                 }

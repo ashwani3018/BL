@@ -55,6 +55,7 @@ import com.netoperation.net.ApiManager;
 import com.netoperation.retrofit.ServiceFactory;
 import com.netoperation.util.NetConstants;
 import com.netoperation.util.THPPreferences;
+import com.ns.activity.THPPersonaliseActivity;
 import com.ns.alerts.Alerts;
 import com.ns.clevertap.CleverTapUtil;
 import com.ns.thpremium.BuildConfig;
@@ -96,13 +97,12 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
     private HomeButtonClickedListener mHomeButtonClickedListener;
 
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
 
 
         //Assigning base url
-        if(BuildConfig.IS_PRODUCTION) {
+        if (BuildConfig.IS_PRODUCTION) {
             ServiceFactory.BASE_URL = BuildConfig.PRODUCTION_BASE_URL;
         } else {
             ServiceFactory.BASE_URL = BuildConfig.STATGGING_BASE_URL;
@@ -362,14 +362,26 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                     mNotificationsCountTextView.setVisibility(View.GONE);
                 }
 
+                final boolean isUserFromEurope = SharedPreferenceHelper.isUserFromEurope(BaseActivity.this);
+
                 LinearLayout mReadLayout = (LinearLayout) layout.findViewById(R.id.layout_readlater);
+
                 mReadLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         FlurryAgent.logEvent(getString(R.string.ga_bookmark_screen_button_clicked));
                         GoogleAnalyticsTracker.setGoogleAnalyticsEvent(BaseActivity.this, getString(R.string.ga_action), getString(R.string.ga_bookmark_screen_button_clicked), "Home Fragment");
-                        Intent intent = new Intent(BaseActivity.this, ReadLaterActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(BaseActivity.this, ReadLaterActivity.class);
+//                        startActivity(intent);
+
+                        if (isUserLoggedIn() && !isUserFromEurope) {
+                            Intent intent = new Intent(BaseActivity.this, BookmarkMergedActivity.class);
+                            intent.putExtra("userId", mUserId);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(BaseActivity.this, ReadLaterActivity.class);
+                            startActivity(intent);
+                        }
                         changeSortPopUp.dismiss();
                     }
                 });
@@ -424,6 +436,28 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                         changeSortPopUp.dismiss();
                     }
                 });
+
+
+                TextView personaliseSubscription = layout.findViewById(R.id.textView_menu_personalise_subscription);
+                if (isUserLoggedIn() && !isUserFromEurope && NetUtils.isConnected(BaseActivity.this)) {
+                    personaliseSubscription.setVisibility(View.VISIBLE);
+                    personaliseSubscription.setOnClickListener(v -> {
+                        if (!NetUtils.isConnected(BaseActivity.this)) {
+                            showSnackBar(personaliseSubscription);
+                            return;
+                        }
+                        GoogleAnalyticsTracker.setGoogleAnalyticsEvent(
+                                BaseActivity.this,
+                                getString(R.string.ga_action),
+                                "Customise Subscription: Customise Subscription Button Clicked ",
+                                getString(R.string.custom_home_screen));
+                        FlurryAgent.logEvent("Customise Subscription: Customise Subscription Button Clicked ");
+                        startActivity(new Intent(BaseActivity.this, THPPersonaliseActivity.class));
+                        changeSortPopUp.dismiss();
+                    });
+                } else {
+                    personaliseSubscription.setVisibility(View.GONE);
+                }
 
                 changeSortPopUp.showAsDropDown(txtViewOverFlowCount, 0, 0);
             }
@@ -586,7 +620,9 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
     //////////////////////////////////  BL SUBSCRIPTION ////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /** Holds String value of User Name, to know whether user has logged in or not*/
+    /**
+     * Holds String value of User Name, to know whether user has logged in or not
+     */
     protected static String mUserId;
     private static boolean mIsUserLoggedIn;
     private static boolean mHasFreePlan;
@@ -611,7 +647,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
     private void login(int pos) {
 
         if (isUserLoggedIn() && !THPPreferences.getInstance(BaseActivity.this).isRelogginSuccess() && !NetUtils.isConnected(BaseActivity.this)) {
-            if(mBottomNavigationView != null) {
+            if (mBottomNavigationView != null) {
                 Alerts.noConnectionSnackBar(mBottomNavigationView, BaseActivity.this);
             }
         } else if (isUserLoggedIn() && !THPPreferences.getInstance(BaseActivity.this).isRelogginSuccess() && NetUtils.isConnected(BaseActivity.this)) {
@@ -652,7 +688,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                 public void OnFailure() {
                     progress.dismiss();
                     if (!NetUtils.isConnected(BaseActivity.this)) {
-                        if(mBottomNavigationView != null) {
+                        if (mBottomNavigationView != null) {
                             Alerts.noConnectionSnackBar(mBottomNavigationView, BaseActivity.this);
                         }
                         return;
@@ -749,7 +785,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
 //        Log.i("Ashwani", "cleverTapId :: "+cleverTapId);
 
         boolean isUserFromEurope = SharedPreferenceHelper.isUserFromEurope(this);
-        if(isUserFromEurope) {
+        if (isUserFromEurope) {
 //            updateBottomLayout(false, true);
 //            hideBottomAdView();
 //            hideSubscriptionLayout();
@@ -760,22 +796,20 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
 
         boolean isRefreshRequired = THPPreferences.getInstance(this).isRefreshRequired();
 
-        if(!mIsUserLoggedIn) {
+        if (!mIsUserLoggedIn) {
             mHasFreePlan = false;
             mHasSubscriptionPlan = false;
             SharedPreferenceHelper.setUserPreferAdsFree(this, isUserFromEurope);
 //            updateBottomLayout(false, mIsHidingBottomTab);
 //            showHideCrownAndSubscription();
             return;
-        }
-        else {
+        } else {
             final boolean isUserAdsFree = THPPreferences.getInstance(this).isUserAdsFree();
             SharedPreferenceHelper.setUserPreferAdsFree(this, isUserAdsFree);
-            if(isUserAdsFree) {
+            if (isUserAdsFree) {
 //                hideBottomAdView();
             }
         }
-
 
 
         ApiManager.getUserProfile(this)
@@ -783,24 +817,24 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                 .subscribe(userProfile -> {
                     mUserId = userProfile.getUserId();
 
-                    if(mIsUserLoggedIn) {
+                    if (mIsUserLoggedIn) {
                         String loginId = THPPreferences.getInstance(this).getLoginId();
                         String loginPasswd = THPPreferences.getInstance(this).getLoginPasswd();
                         // Fetch latest userinfo from server
                         ApiManager.getUserInfo(this, userProfile.getAuthorization(), BuildConfig.SITEID,
                                 ResUtil.getDeviceId(this), mUserId, loginId, loginPasswd)
-                                .subscribe(val->{
+                                .subscribe(val -> {
                                     Log.i("", "");
-                                }, thr->{
+                                }, thr -> {
                                     Log.i("", "");
                                 });
 
                         // Fetch latest bookmark list from server
                         ApiManager.getRecommendationFromServer(this, mUserId,
-                                NetConstants.RECO_bookmarks, ""+1000, BuildConfig.SITEID)
-                                .subscribe(val->{
+                                NetConstants.RECO_bookmarks, "" + 1000, BuildConfig.SITEID)
+                                .subscribe(val -> {
                                     Log.i("", "");
-                                }, thr->{
+                                }, thr -> {
                                     Log.i("", "");
                                 });
                     }

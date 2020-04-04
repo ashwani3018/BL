@@ -503,11 +503,8 @@ public class IntentUtil {
             return;
         }*/
 
-        if(isUserLoggedIn && (isHasSubcription || isHasFreePlan) && (tabIndex != -1)) {
+        if(isUserLoggedIn && (isHasSubcription || isHasFreePlan)) {
             IntentUtil.openContentListingActivity(context, from, tabIndex);
-        }
-        else if(isUserLoggedIn && isHasFreePlan && tabIndex == -1) {
-            IntentUtil.openSubscriptionActivity(context, THPConstants.FROM_SUBSCRIPTION_EXPLORE);
         }
         else if(isUserLoggedIn && !isHasFreePlan) { // THis is for sort time, may be in future in logic or implementation will come
             IntentUtil.openSubscriptionActivity(context, THPConstants.FROM_SUBSCRIPTION_EXPLORE);

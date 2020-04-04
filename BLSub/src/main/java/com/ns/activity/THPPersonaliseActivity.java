@@ -465,7 +465,7 @@ public class THPPersonaliseActivity extends BaseAcitivityTHP implements THPPerso
                     }
 
                     // Now we are sending Personalise data to server
-                    ApiManager.setPersonalise(userProfile.getUserId(), BuildConfig.SITEID, ResUtil.getDeviceId(THPPersonaliseActivity.this),
+                    ApiManager.setPersonalise(userProfile.getAuthorization(), userProfile.getUserId(), BuildConfig.SITEID, ResUtil.getDeviceId(THPPersonaliseActivity.this),
                             topicsL, citiesL, authorsL)
                             .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(keyValueModel->{

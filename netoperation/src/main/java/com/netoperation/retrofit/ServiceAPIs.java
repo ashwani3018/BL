@@ -46,7 +46,7 @@ public interface ServiceAPIs {
     Observable<JsonElement> signup(@Body JsonObject logoutBody);
 
     @POST("/v1/auth/logout/hindu") // BL
-    Observable<JsonElement> logout(@Body JsonObject loginBody);
+    Observable<JsonElement> logout(@Header("Authorization") String authorization, @Body JsonObject loginBody);
 
     @POST("/v1/auth/userVerify/HINDU") // BL
     Observable<JsonElement> userVerification(@Body JsonObject userVerificationBody);
@@ -105,7 +105,7 @@ public interface ServiceAPIs {
     Observable<JsonElement> updateAddress(@Body JsonObject updateProfile);
 
     @POST("/v1/auth/userPreference/hindu") // BL
-    Observable<JsonElement> setPersonalise(@Body JsonObject updateProfile);
+    Observable<JsonElement> setPersonalise(@Header("Authorization") String authorization, @Body JsonObject updateProfile);
 
     @POST("/v1/auth/userPreference/hindu") // BL
     Observable<SelectedPrefModel> getPersonalise(@Body JsonObject updateProfile);

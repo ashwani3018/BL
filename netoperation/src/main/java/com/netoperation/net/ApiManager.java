@@ -516,7 +516,7 @@ public class ApiManager {
                                     // Deleting Previous Profile DB
                                     thpdb.userProfileDao().deleteAll();
 
-
+                                    userProfile.setAuthorization(authorization);
                                     userProfile.setEmailId(emailId);
                                     userProfile.setContact(contact_);
                                     userProfile.setRedirectUrl(redirectUrl);
@@ -1754,8 +1754,8 @@ public class ApiManager {
      * @param deviceId
      * @return
      */
-    public static Observable<KeyValueModel> logout(Context context, String userId, String siteId, String deviceId) {
-        return ServiceFactory.getServiceAPIs().logout(ReqBody.logout(userId, siteId, deviceId))
+    public static Observable<KeyValueModel> logout(Context context, String authorization, String userId, String siteId, String deviceId) {
+        return ServiceFactory.getServiceAPIs().logout(authorization, ReqBody.logout(userId, siteId, deviceId))
                 .subscribeOn(Schedulers.newThread())
                 .map(value-> {
                     KeyValueModel keyValueModel = new KeyValueModel();
@@ -1844,7 +1844,7 @@ public class ApiManager {
                 });
     }
 
-    public static Observable<KeyValueModel> setPersonalise(@NonNull String userId, @NonNull String siteId, @NonNull String deviceId, @NonNull ArrayList<String> topics,
+    public static Observable<KeyValueModel> setPersonalise(@NonNull String authorization, @NonNull String userId, @NonNull String siteId, @NonNull String deviceId, @NonNull ArrayList<String> topics,
                                                      @NonNull ArrayList<String> cities, @NonNull ArrayList<String> authors) {
         JsonObject personaliseObj = new JsonObject();
 
@@ -1866,7 +1866,7 @@ public class ApiManager {
         }
         personaliseObj.add("author", ja);
 
-        return ServiceFactory.getServiceAPIs().setPersonalise(ReqBody.setUserPreference(userId, siteId, deviceId, personaliseObj))
+        return ServiceFactory.getServiceAPIs().setPersonalise(authorization, ReqBody.setUserPreference(userId, siteId, deviceId, personaliseObj))
                 .subscribeOn(Schedulers.newThread())
                 .map(value-> {
                             KeyValueModel keyValueModel = new KeyValueModel();

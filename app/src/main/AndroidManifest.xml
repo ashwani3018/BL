@@ -79,6 +79,11 @@
                     android:host="publisher"
                     android:scheme="vservdemopublisher" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.mobstac.thehindubusinessline.activity.openHomeActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
             <!-- bee7 intent end -->
         </activity>
         <activity
@@ -206,7 +211,12 @@
         <activity
             android:name=".activity.PortfolioActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.mobstac.thehindubusinessline.activity.openPortfolioActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.BLInkActivity"
             android:launchMode="singleTask"
@@ -255,6 +265,17 @@
         <activity
             android:name=".tts.TTSLanguageSettingActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BookmarkMergedActivity"
+            android:configChanges="uiMode"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ash.thp.bookmarks.opening" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"

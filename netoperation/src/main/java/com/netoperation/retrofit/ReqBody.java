@@ -53,6 +53,7 @@ public class ReqBody {
         object.addProperty("userId", userId);
         object.addProperty("deviceId", deviceId);
         object.addProperty("siteId", siteId);
+        object.addProperty("requestSource", REQUEST_SOURCE);
         return object;
     }
 

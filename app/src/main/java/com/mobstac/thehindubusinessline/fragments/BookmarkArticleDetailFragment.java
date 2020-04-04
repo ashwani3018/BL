@@ -158,6 +158,7 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
     public void onAttach(Context context) {
         super.onAttach(context);
         Log.d(TAG, "onAttach: ");
+        if(mMainActivity instanceof AdsBaseActivity)
         mMainActivity = (AdsBaseActivity) context;
     }
 
@@ -165,6 +166,7 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         Log.d(TAG, "onAttach: ");
+        if(mMainActivity instanceof AdsBaseActivity)
         mMainActivity = (AdsBaseActivity) activity;
     }
 
@@ -194,12 +196,11 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
         initView(view);
 
 
-//        initVmaxTopAds();
-//        mMainActivity.hideHomeBottomAdBanner();
-//        mMainActivity.showRosBottomBanner();
-        if (!SharedPreferenceHelper.getBoolean(mMainActivity, Constants.FIRST_TAP, false)) {
-            SharedPreferenceHelper.putBoolean(mMainActivity, Constants.FIRST_TAP, true);
-            mMainActivity.loadFullScreenAds(false);
+        if (!SharedPreferenceHelper.getBoolean(getActivity(), Constants.FIRST_TAP, false)) {
+            SharedPreferenceHelper.putBoolean(getActivity(), Constants.FIRST_TAP, true);
+            if(mMainActivity != null) {
+                mMainActivity.loadFullScreenAds(false);
+            }
         }
 
         // GDPR Consent Status
@@ -241,7 +242,7 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
                         playTextToSpeech(positionPlayed);
                     } else {
                         if (mMenu != null) {
-                            mMainActivity.runOnUiThread(new Runnable() {
+                            getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     mTextToSpeech.stop();
@@ -252,7 +253,7 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
                     }
                 } else {
                     if (mMenu != null) {
-                        mMainActivity.runOnUiThread(new Runnable() {
+                        getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 mTextToSpeech.stop();
@@ -345,7 +346,7 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
             }
             String caption = mImageList.get(0).getCa();
             if (imageUrl != null && !TextUtils.isEmpty(imageUrl)) {
-                PicassoUtils.downloadImage(mMainActivity, imageUrl, mHeaderImageView, R.mipmap.ph_topnews_th);
+                PicassoUtils.downloadImage(getActivity(), imageUrl, mHeaderImageView, R.mipmap.ph_topnews_th);
             } else {
                 if (articleType.equalsIgnoreCase(Constants.TYPE_PHOTO) || articleType.equalsIgnoreCase(Constants.TYPE_AUDIO) || articleType.equalsIgnoreCase(Constants.TYPE_VIDEO)) {
                     mHeaderImageView.setVisibility(View.VISIBLE);
@@ -456,9 +457,10 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
             articleUrl = Constants.THE_HINDU_URL;
         }
 
-
-        mMainActivity.createBannerAdRequest(true, true, articleUrl);
-        if (NetworkUtils.isNetworkAvailable(mMainActivity)) {
+        if(mMainActivity != null) {
+            mMainActivity.createBannerAdRequest(true, true, articleUrl);
+        }
+        if (NetworkUtils.isNetworkAvailable(getActivity())) {
             // new GetCommentCountTask(String.valueOf(mArticleDetail.getAid())).execute();
 
             VukkleCommentCountTask mVukkleCountTask = (VukkleCommentCountTask) new VukkleCommentCountTask(String.valueOf(mArticleDetail.getAid())).execute();
@@ -472,9 +474,9 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
         /** text to speech for Title */
         title = mTitleTextView.getText().toString();
         /*Overlay screen impementation*/
-        boolean articleOverlayNeedTobeLoaded = SharedPreferenceHelper.getBoolean(mMainActivity, Constants.ARTICLE_OVERLAY_SCREEN_LOADED, false);
+        boolean articleOverlayNeedTobeLoaded = SharedPreferenceHelper.getBoolean(getActivity(), Constants.ARTICLE_OVERLAY_SCREEN_LOADED, false);
         if (articleOverlayNeedTobeLoaded) {
-            Intent intent = new Intent(mMainActivity, OverlayActivity.class);
+            Intent intent = new Intent(getActivity(), OverlayActivity.class);
             intent.putExtra(Constants.OVERLAY_TYPE, OverlayActivity.TYPE_ARTICLE);
             startActivity(intent);
         }
@@ -593,7 +595,9 @@ public class BookmarkArticleDetailFragment extends BaseFragment implements View.
 
     @Override
     public void onDestroy() {
-        mMainActivity.deleteUnBookmarkedArticleFromDatabase();
+        if(mMainActivity != null) {
+            mMainActivity.deleteUnBookmarkedArticleFromDatabase();
+        }
 //        if (mInsideDescriptionAdview != null) {
 //            mInsideDescriptionAdview.onDestroy();
 //        }

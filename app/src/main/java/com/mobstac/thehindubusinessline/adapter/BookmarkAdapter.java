@@ -166,10 +166,9 @@ public class BookmarkAdapter extends RealmRecyclerViewAdapter<BookmarkBean, Recy
                 BookmarkArticleDetailFragment fragment = BookmarkArticleDetailFragment.newInstance(bean.getAid(), bean.getSid());
                 ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction()
                         .replace(R.id.FRAME_CONTENT, fragment).addToBackStack(null).commit();
-                /* SlidingBookmarkArticleFragment fragment = SlidingBookmarkArticleFragment.newInstance(getArticlePositionPosition(bean.getAid()));
-                ((AppCompatActivity) mContext).getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.FRAME_CONTENT, fragment).addToBackStack(null).commit();*/
-                mMainActivity.expandToolbar(true);
+                if(mMainActivity !=null ) {
+                    mMainActivity.expandToolbar(true);
+                }
             }
         });
         articleHolder.mMultimediaButton.setOnClickListener(new View.OnClickListener() {

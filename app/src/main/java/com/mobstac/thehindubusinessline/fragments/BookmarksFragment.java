@@ -72,35 +72,51 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
     private ImageView mSearchImageView;
     private TextView mSearchResultTextView;
     private Dialog mWarningDialog;
+    private String mFrom;
 
     public BookmarksFragment() {
         // Required empty public constructor
+    }
+
+    public static BookmarksFragment getInstance(String from) {
+        BookmarksFragment fragment = new BookmarksFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("from", from);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mMainActivity = (AdsBaseActivity) context;
+        if (context instanceof AdsBaseActivity) {
+            mMainActivity = (AdsBaseActivity) context;
+        }
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mMainActivity = (AdsBaseActivity) activity;
+        if (activity instanceof AdsBaseActivity) {
+            mMainActivity = (AdsBaseActivity) activity;
+        }
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        if (getArguments() != null) {
+            mFrom = getArguments().getString("from");
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bookmarks, container, false);
-        if (!SharedPreferenceHelper.getBoolean(mMainActivity, Constants.OLD_DATABASE, false)) {
+        if (!SharedPreferenceHelper.getBoolean(getActivity(), Constants.OLD_DATABASE, false)) {
             getActivity().getLoaderManager().initLoader(LOADER_ID, null, this);
         }
 
@@ -154,7 +170,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    AppUtils.hideKeyBoard(mMainActivity, mSearchTextView);
+                    AppUtils.hideKeyBoard(getActivity(), mSearchTextView);
                     return true;
                 }
                 return false;
@@ -176,7 +192,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
             @Override
             public void onClick(View v) {
                 mSearchTextView.setText("");
-                AppUtils.hideKeyBoard(mMainActivity, v);
+                AppUtils.hideKeyBoard(getActivity(), v);
              /*   if (mBookmarkAdapter != null) {
                     mBookmarkAdapter.setBookmarkList(mBookmarkArticlesList);
                     if (mBookmarkArticlesList.size() <= 0) {
@@ -194,7 +210,9 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mMainActivity.createBannerAdRequest(true, false, "");
+        if (mMainActivity != null) {
+            mMainActivity.createBannerAdRequest(true, false, "");
+        }
     }
 
     @Override
@@ -254,7 +272,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
                         "Bookmark: Back button clicked",
                         "Read Later");
                 FlurryAgent.logEvent("Bookmark: Back button clicked");
-                mMainActivity.finish();
+                getActivity().finish();
                 return true;
             case R.id.action_clear_all:
                 createWarningDialog();
@@ -267,7 +285,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
     @Override
     public void onPause() {
         super.onPause();
-        AppUtils.hideKeyBoard(mMainActivity, mSearchTextView);
+        AppUtils.hideKeyBoard(getActivity(), mSearchTextView);
     }
 
     private void setVisibilityOfViews(OrderedRealmCollection<BookmarkBean> mBookmarkArticlesList) {
@@ -329,11 +347,11 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
                 mRealm.copyToRealmOrUpdate(new BookmarkBean(Integer.valueOf(articleId), sectionId, section_name, publish_date,
                         origin_date, priority, title, author, article_link, null, result, description,
                         article_lead, 0, imageBean, System.currentTimeMillis(), false, 0, "", Constants.TYPE_ARTICLE, null,
-                        "0",""));
+                        "0", ""));
                 mRealm.commitTransaction();
                 cursor.moveToNext();
             }
-            SharedPreferenceHelper.putBoolean(mMainActivity, Constants.OLD_DATABASE, true);
+            SharedPreferenceHelper.putBoolean(getActivity(), Constants.OLD_DATABASE, true);
 
             mBookmarkArticlesList = DatabaseJanitor.getBookmarksArticles();
             if (mBookmarkArticlesList.size() <= 0) {
@@ -345,7 +363,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
             if (mBookmarkAdapter != null) {
                 mBookmarkAdapter.setBookmarkList(mBookmarkArticlesList);
             } else {
-                mBookmarkAdapter = new BookmarkAdapter(mMainActivity, mBookmarkArticlesList, this, mMainActivity);
+                mBookmarkAdapter = new BookmarkAdapter(getActivity(), mBookmarkArticlesList, this, mMainActivity);
                 mRecyclerView.setAdapter(mBookmarkAdapter);
             }
         }
@@ -379,7 +397,7 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
     }
 
     private void createWarningDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mMainActivity);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("Do you want to delete all articles in this screen ? ");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -393,7 +411,9 @@ public class BookmarksFragment extends BaseFragment implements LoaderManager.Loa
                 mSearchParentLayout.setVisibility(View.GONE);
                 mRecyclerView.setVisibility(View.GONE);
                 mNoBookmarksLayout.setVisibility(View.VISIBLE);
-                mMainActivity.invalidateOptionsMenu();
+                if (mMainActivity != null) {
+                    mMainActivity.invalidateOptionsMenu();
+                }
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

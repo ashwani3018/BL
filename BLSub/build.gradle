@@ -15,6 +15,7 @@ android {
         buildConfigField "boolean", "IS_PRODUCTION", "false"
 
         buildConfigField "String", "SITEID", "\"TRC-J3AFTO\""
+//        buildConfigField "String", "SITEID", "\"THB-KGYI42\""
         buildConfigField "String", "ORIGIN_URL", "\"www.thehindu.com\""
 
         buildConfigField "String", "STATGGING_BASE_URL", "\"https://tai.thehindu.co.in\""
